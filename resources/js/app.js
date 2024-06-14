@@ -24,46 +24,46 @@ import 'material-icons/iconfont/filled.css'
 import 'material-icons/iconfont/outlined.css'
 
 // prepare fontawesome
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-// import { fas } from '@fortawesome/free-solid-svg-icons'
-// import { far } from '@fortawesome/free-regular-svg-icons'
-// import {
-//     faGoogleDrive,
-//     faGoogle,
-//     faInstagram,
-//     faFacebook,
-//     faXTwitter,
-//     faMeta,
-//     faMicrosoft,
-//     faApple,
-//     faTiktok,
-//     faDiscord,
-//     faYoutube,
-//     faLinkedin,
-//     faSlack,
-//     faSnapchat,
-//     faUnsplash,
-// } from '@fortawesome/free-brands-svg-icons'
-// library.add(
-//     fas,
-//     far,
-//     faGoogle,
-//     faGoogleDrive,
-//     faInstagram,
-//     faFacebook,
-//     faXTwitter,
-//     faMeta,
-//     faMicrosoft,
-//     faApple,
-//     faTiktok,
-//     faDiscord,
-//     faYoutube,
-//     faLinkedin,
-//     faSlack,
-//     faSnapchat,
-//     faUnsplash,
-// )
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import {
+    faGoogleDrive,
+    faGoogle,
+    faInstagram,
+    faFacebook,
+    faXTwitter,
+    faMeta,
+    faMicrosoft,
+    faApple,
+    faTiktok,
+    faDiscord,
+    faYoutube,
+    faLinkedin,
+    faSlack,
+    faSnapchat,
+    faUnsplash,
+} from '@fortawesome/free-brands-svg-icons'
+library.add(
+    fas,
+    far,
+    faGoogle,
+    faGoogleDrive,
+    faInstagram,
+    faFacebook,
+    faXTwitter,
+    faMeta,
+    faMicrosoft,
+    faApple,
+    faTiktok,
+    faDiscord,
+    faYoutube,
+    faLinkedin,
+    faSlack,
+    faSnapchat,
+    faUnsplash,
+)
 
 // prepare translations
 import { createI18n } from 'vue-i18n'
@@ -117,7 +117,7 @@ createInertiaApp({
                 .use(pinia)
                 .use(GesturePlugin)
                 .use(VueSanitize)
-                // .component('font-awesome-icon', FontAwesomeIcon)
+                .component('font-awesome-icon', FontAwesomeIcon)
                 .component('Cropper', Cropper)
                 .component('CircleStencil', CircleStencil)
                 .mount(el)
