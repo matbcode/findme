@@ -54,9 +54,9 @@ class AccountImageService
 		$image = $manager->read($image);
 
 		// Resize and crop the image to fit the specified dimensions
-		$image->coverDown(config('raichi.account_image.width'), config('raichi.account_image.height'));
+		$image->coverDown(64, 64);
 
 		// Save the manipulated image
-		return $image->encode(new WebpEncoder(config('raichi.account_image.quality')))->toString();
+		return $image->encode(new WebpEncoder(90))->toString();
 	}
 }
