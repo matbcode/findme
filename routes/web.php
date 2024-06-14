@@ -26,5 +26,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 	Route::get('/profile/notifications/mark-as-read', [ProfileController::class, 'markNotificationsAsRead'])->name('profile.notifications.mark-as-read');
 });
 
+Route::get('/id/{identity}', [IdentityController::class, 'show'])->name('identity.show');
+
 require __DIR__ . '/auth.php';
 require __DIR__ . '/static.php';

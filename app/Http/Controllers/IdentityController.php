@@ -12,6 +12,17 @@ use Throwable;
 class IdentityController extends Controller
 {
 	/**
+	 * @param Identity $identity
+	 * @return Response
+	 */
+	public function show(Identity $identity): Response
+	{
+		return Inertia::render('Identity/Show', [
+			'identity' => $identity
+		]);
+	}
+
+	/**
 	 * @return RedirectResponse
 	 * @throws Throwable
 	 */
