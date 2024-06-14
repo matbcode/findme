@@ -15,7 +15,7 @@ const props = defineProps({
             :href="route('dashboard')"
             class="logo relative hover:scale-95"
         >
-            <span class="text-xl font-bold"> Raichi</span>
+            <span class="text-xl font-bold"> Imlost</span>
         </Link>
     </div>
 </template>

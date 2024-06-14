@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { Head, Link, useForm } from '@inertiajs/vue3'
-import { useUserStore } from '@/Stores/user'
 
 import Dropdown from 'primevue/dropdown'
 import Checkbox from 'primevue/checkbox'
@@ -15,14 +14,11 @@ import CenteredLayout from '@/Layouts/CenteredLayout.vue'
 import MainLayout from '@/Layouts/MainLayout.vue'
 defineOptions({ layout: MainLayout })
 
-const user = useUserStore()
-
 const form = useForm({
     first_name: '',
     last_name: '',
     username: '',
     email: '',
-    timezone: user.getDefaultTimezone().id,
     locale: 'en-GB',
     password: '',
     password_confirmation: '',

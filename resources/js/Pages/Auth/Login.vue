@@ -61,14 +61,13 @@ const onMicrosoftLogin = () => {
                 <div class="flex justify-between">
                     <Logo />
                 </div>
-                <span> Sign in to your Raichi account </span>
+                <span> Sign in to your account </span>
             </div>
 
             <div class="flex gap-2">
                 <CustomButton
                     type="submit"
                     label="Sign in with Google"
-                    icon="fa-brands fa-google"
                     class="w-full"
                     plain
                     raised
@@ -82,14 +81,14 @@ const onMicrosoftLogin = () => {
                     class="h-[45px] w-[58px]"
                     @click="onAppleLogin"
                 /> -->
-                <CustomButton
+                <!-- <CustomButton
                     type="submit"
                     icon="fa-brands fa-microsoft"
                     plain
                     raised
                     class="h-[45px] w-[50px]"
                     @click="onMicrosoftLogin"
-                />
+                /> -->
             </div>
 
             <div class="mt-2 flex items-center gap-4">
