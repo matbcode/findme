@@ -52,7 +52,6 @@ class IdentityController extends Controller
 	 */
 	public function update(Identity $identity, Request $request): RedirectResponse
 	{
-		$identity->title = $request->input('title');
 		$identity->first_name = $request->input('first_name');
 		$identity->middle_name = $request->input('middle_name');
 		$identity->last_name = $request->input('last_name');
