@@ -1,0 +1,51 @@
+export const defaultStatuses = [
+    {
+        id: 'draft',
+        title: 'Draft',
+        class: 'dark:text-surface-50 bg-surface-400 dark:bg-surface-800/30 border-surface-500 border-dashed hover:border-surface-300 hover:bg-surface-500/30 hover:text-surface-100',
+        color: '#718096',
+        icon: 'edit',
+    },
+    {
+        id: 'error',
+        title: 'Error',
+        class: 'bg-red-200 dark:bg-red-100/20 dark:text-red-300 border-red-500/70 hover:bg-red-500/30 hover:text-red-100 hover:border-red-500',
+        color: '#e53e3e',
+        icon: 'error',
+    },
+    {
+        id: 'released',
+        title: 'Released',
+        class: 'dark:text-green-100 bg-green-200 dark:bg-green-700/30 border-green-400 hover:border-green-300 hover:bg-green-500/30 hover:text-green-100',
+        color: '#48bb78',
+        icon: 'done',
+    },
+    {
+        id: 'done',
+        title: 'Done',
+        class: 'dark:text-surface-50/70 bg-surface-200 dark:bg-surface-800/20 border-slate-400/70 hover:border-slate-300 hover:bg-slate-500/30 hover:text-slate-100',
+        color: 'gray',
+        icon: 'done',
+    },
+    {
+        id: 'awaiting_approval',
+        title: 'Awaiting approval',
+        class: 'dark:text-yellow-100 bg-yellow-200 dark:bg-yellow-700/30 border-yellow-500 hover:border-yellow-300 hover:bg-yellow-500/30 hover:text-yellow-100',
+        color: 'yellow',
+        icon: 'pending',
+    },
+    {
+        id: 'scheduled',
+        title: 'Scheduled',
+        class: 'dark:text-blue-100 bg-blue-200 dark:bg-blue-500/20 border-blue-500 hover:border-blue-300 hover:bg-blue-400/30 hover:text-blue-100 hover:animate-none',
+        color: '#4299e1',
+        icon: 'schedule',
+    },
+    {
+        id: 'queued',
+        title: 'Queued',
+        class: 'dark:text-purple-100 bg-purple-200 dark:bg-purple-700/30 border-purple-500 hover:border-purple-300 hover:bg-purple-500/30 hover:text-purple-100',
+        color: '#9f7aea',
+        icon: 'queue',
+    },
+]
