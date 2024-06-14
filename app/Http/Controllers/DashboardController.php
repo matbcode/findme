@@ -16,8 +16,6 @@ class DashboardController extends Controller
      * @return Response
      */
     public function index(Request $request) {
-        return Inertia::render('Dashboard', [
-            'invitations' => Invitation::where('email', $request->user()->email)->with('workspace')->get()
-        ]);
+        return Inertia::render('Dashboard');
     }
 }
