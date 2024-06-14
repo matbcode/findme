@@ -18,7 +18,7 @@ return new class extends Migration
 			$table->string('middle_name')->nullable();
 			$table->string('last_name')->nullable();
 			$table->string('nickname')->nullable();
-			$table->unsignedTinyInteger('age')->nullable();
+			$table->date('date_of_birth')->nullable();
 			$table->mediumText('description')->nullable();
             $table->timestamps();
         });
