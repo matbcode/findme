@@ -3,21 +3,20 @@ export default {
         class: [
             'flex',
             {
-                'opacity-60 select-none pointer-events-none cursor-default':
-                    props.disabled,
-            },
-        ],
+                'opacity-60 select-none pointer-events-none cursor-default': props.disabled
+            }
+        ]
     }),
-    container: ({ state }) => ({
+    container: ({ state, props, parent }) => ({
         class: [
             // Font
-            'font-sans text-base leading-none',
+            'text-base leading-none',
 
             // Flex
             'flex items-center flex-wrap gap-2',
 
             // Spacing
-            'm-0 py-1.5 px-3',
+            'm-0 py-[0.375rem] px-3',
 
             // Size
             'w-full',
@@ -25,41 +24,42 @@ export default {
 
             // Shape
             'list-none',
-            'rounded-2xl',
+            'rounded-md',
 
             // Color
-            'text-slate-700 dark:text-surface-50',
-            'bg-slate-50 dark:bg-surface-900',
-            'border border-surface-500/40 ',
+            'text-surface-700 dark:text-white/80',
+            'bg-surface-0 dark:bg-surface-900',
+            'border',
+            { 'border-surface-300 dark:border-surface-600': !props.invalid },
+
+            // Invalid State
+            { 'border-red-500 dark:border-red-400': props.invalid },
 
             // States
-            'hover:border-primary-500 dark:hover:border-primary-400',
+            { 'hover:border-primary': !props.invalid },
             'focus:outline-none focus:outline-offset-0',
-            {
-                'ring ring-primary-400/50 dark:ring-primary-300/50':
-                    state.focused,
-            },
-            {
-                'ring ring-primary-400/50 dark:ring-primary-300/50':
-                    state.hovered,
-            },
+            { 'ring ring-primary-400/50 dark:ring-primary-300/50': state.focused },
+            { 'ring ring-primary-400/50 dark:ring-primary-300/50': state.hovered },
+
+            // Filled State *for FloatLabel
+            { filled: parent.instance?.$name == 'FloatLabel' && props.modelValue !== null && props.modelValue?.length !== 0 },
 
             // Transition
             'transition-colors duration-200',
 
             // Misc
             'cursor-text overflow-hidden',
-            'appearance-none',
-        ],
+            'appearance-none'
+        ]
     }),
 
     inputtoken: {
-        class: ['py-1.5 px-0', 'inline-flex flex-auto'],
+        class: ['py-1.5 px-0', 'inline-flex flex-auto']
     },
     input: {
         class: [
             // Font
-            'font-sans text-base leading-[1.2]',
+            'text-base leading-[normal]',
 
             // Size
             'w-full',
@@ -73,9 +73,9 @@ export default {
             'shadow-none',
 
             // Color
-            'text-slate-700 dark:text-surface-50',
-            'bg-transparent',
-        ],
+            'text-surface-700 dark:text-white/80',
+            'bg-transparent'
+        ]
     },
     token: {
         class: [
@@ -89,17 +89,17 @@ export default {
             'rounded-[1.14rem]',
 
             // Colors
-            'text-slate-700 dark:text-surface-50',
-            'bg-slate-200 dark:bg-surface-800',
-        ],
+            'text-surface-700 dark:text-white/70',
+            'bg-surface-200 dark:bg-surface-700'
+        ]
     },
     label: {
-        class: 'leading-5',
+        class: 'leading-[normal]'
     },
     removeTokenIcon: {
         class: [
             // Shape
-            'rounded-2xl leading-6',
+            'rounded-md leading-6',
 
             // Spacing
             'ml-2',
@@ -111,7 +111,7 @@ export default {
             'transition duration-200 ease-in-out',
 
             // Misc
-            'cursor-pointer',
-        ],
-    },
-}
+            'cursor-pointer'
+        ]
+    }
+};

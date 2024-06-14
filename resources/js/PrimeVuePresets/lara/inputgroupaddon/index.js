@@ -5,12 +5,12 @@ export default {
             'flex items-center justify-center',
 
             // Shape
-            'first:rounded-l-full',
-            'last:rounded-r-full',
-            'border-y-0',
+            'first:rounded-l-md',
+            'last:rounded-r-md',
+            'border-y',
 
             'last:border-r',
-            'border-l-0',
+            'border-l',
             'border-r-0',
 
             // Space
@@ -20,9 +20,9 @@ export default {
             'min-w-[3rem]',
 
             // Color
-            'bg-slate-50 dark:bg-surface-900',
-            'text-slate-600 dark:text-surface-400',
-            'border-surface-500/40 ',
-        ],
-    },
-}
+            'bg-surface-50 dark:bg-surface-800',
+            'text-surface-600 dark:text-surface-400',
+            'border-surface-300 dark:border-surface-600'
+        ]
+    }
+};

@@ -11,23 +11,23 @@ export default {
             'rounded-[1.14rem]',
 
             // Colors
-            'text-slate-700 dark:text-surface-50',
-            'bg-slate-200 dark:bg-surface-800',
-        ],
+            'text-surface-700 dark:text-white/70',
+            'bg-surface-200 dark:bg-surface-700'
+        ]
     },
     label: {
-        class: 'leading-6 my-1.5 mx-0',
+        class: 'leading-6 my-1.5 mx-0'
     },
     icon: {
-        class: 'leading-6 mr-2',
+        class: 'leading-6 mr-2'
     },
     image: {
-        class: ['w-9 h-9 -ml-3 mr-2', 'rounded-full'],
+        class: ['w-9 h-9 -ml-3 mr-2', 'rounded-full']
     },
     removeIcon: {
         class: [
             // Shape
-            'rounded-2xl leading-6',
+            'rounded-md leading-6',
 
             // Spacing
             'ml-2',
@@ -39,7 +39,7 @@ export default {
             'transition duration-200 ease-in-out',
 
             // Misc
-            'cursor-pointer',
-        ],
-    },
-}
+            'cursor-pointer'
+        ]
+    }
+};

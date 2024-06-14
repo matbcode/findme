@@ -11,8 +11,8 @@ export default {
             'overflow-hidden',
 
             // Misc
-            'relative float-left',
-        ],
+            'relative float-left'
+        ]
     },
     content: {
         class: [
@@ -29,8 +29,8 @@ export default {
             'relative',
 
             // Webkit Specific
-            '[&::-webkit-scrollbar]:hidden',
-        ],
+            '[&::-webkit-scrollbar]:hidden'
+        ]
     },
     barX: {
         class: [
@@ -38,7 +38,7 @@ export default {
             'h-[9px] bottom-0',
 
             // Appearance
-            'bg-surface-200 dark:bg-surface-800 rounded-full',
+            'bg-surface-50 dark:bg-surface-700 rounded',
 
             // Interactivity
             'cursor-pointer',
@@ -50,8 +50,8 @@ export default {
             'transition duration-[250ms] ease-linear',
 
             // Misc
-            'relative',
-        ],
+            'relative'
+        ]
     },
     barY: {
         class: [
@@ -59,7 +59,7 @@ export default {
             'w-[9px] top-0',
 
             // Appearance
-            'bg-surface-200 dark:bg-surface-800 rounded',
+            'bg-surface-50 dark:bg-surface-700 rounded',
 
             // Interactivity
             'cursor-pointer',
@@ -71,7 +71,7 @@ export default {
             'transition duration-[250ms] ease-linear',
 
             // Misc
-            'relative',
-        ],
-    },
-}
+            'relative'
+        ]
+    }
+};

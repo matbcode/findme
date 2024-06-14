@@ -5,8 +5,8 @@ export default {
             'relative',
 
             // Misc
-            { 'overflow-hidden': props.scrollable },
-        ],
+            { 'overflow-hidden': props.scrollable }
+        ]
     }),
     navContent: {
         class: [
@@ -14,8 +14,8 @@ export default {
             'overflow-y-hidden overscroll-contain',
             'overscroll-auto',
             'scroll-smooth',
-            '[&::-webkit-scrollbar]:hidden',
-        ],
+            '[&::-webkit-scrollbar]:hidden'
+        ]
     },
     previousButton: {
         class: [
@@ -32,10 +32,10 @@ export default {
             'rounded-none',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-900',
-            'text-primary-500 dark:text-primary-400',
-            'shadow-sm',
-        ],
+            'bg-surface-0 dark:bg-surface-800',
+            'text-primary',
+            'shadow-md'
+        ]
     },
     nextButton: {
         class: [
@@ -52,10 +52,10 @@ export default {
             'rounded-none',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-900',
-            'text-primary-500 dark:text-primary-400',
-            'shadow-sm',
-        ],
+            'bg-surface-0 dark:bg-surface-800',
+            'text-primary',
+            'shadow-md'
+        ]
     },
     nav: {
         class: [
@@ -67,24 +67,22 @@ export default {
             'p-0 m-0',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-900',
-            'border-b-2 border-surface-500/40 ',
-            'text-slate-900 dark:text-surface-50/80',
-        ],
+            'bg-surface-0 dark:bg-surface-800',
+            'border-b-2 border-surface-200 dark:border-surface-700',
+            'text-surface-900 dark:text-surface-0/80'
+        ]
     },
     tabpanel: {
         header: ({ props }) => ({
             class: [
                 // Spacing
                 'mr-0',
-                'p-0',
 
                 // Misc
                 {
-                    'opacity-60 cursor-default user-select-none select-none pointer-events-none':
-                        props?.disabled,
-                },
-            ],
+                    'opacity-60 cursor-default user-select-none select-none pointer-events-none': props?.disabled
+                }
+            ]
         }),
         headerAction: ({ parent, context }) => ({
             class: [
@@ -102,35 +100,26 @@ export default {
 
                 // Shape
                 'border-b-2',
-                'rounded-t-2xl',
+                'rounded-t-md',
 
                 // Colors and Conditions
                 {
-                    'border-surface-500/40 ':
-                        parent.state.d_activeIndex !== context.index,
-                    'bg-slate-50 dark:bg-surface-900':
-                        parent.state.d_activeIndex !== context.index,
-                    'text-slate-700 dark:text-surface-50/80':
-                        parent.state.d_activeIndex !== context.index,
+                    'border-surface-200 dark:border-surface-700': parent.state.d_activeIndex !== context.index,
+                    'bg-surface-0 dark:bg-surface-800': parent.state.d_activeIndex !== context.index,
+                    'text-surface-700 dark:text-surface-0/80': parent.state.d_activeIndex !== context.index,
 
-                    'bg-slate-50 dark:bg-surface-900':
-                        parent.state.d_activeIndex === context.index,
-                    'border-primary-500 dark:border-primary-400':
-                        parent.state.d_activeIndex === context.index,
-                    'text-primary-500 dark:text-primary-400':
-                        parent.state.d_activeIndex === context.index,
+                    'bg-surface-0 dark:bg-surface-800': parent.state.d_activeIndex === context.index,
+                    'border-primary': parent.state.d_activeIndex === context.index,
+                    'text-primary': parent.state.d_activeIndex === context.index
                 },
 
                 // States
                 'focus-visible:outline-none focus-visible:outline-offset-0 focus-visible:ring focus-visible:ring-inset',
                 'focus-visible:ring-primary-400/50 dark:focus-visible:ring-primary-300/50',
                 {
-                    'hover:bg-slate-50 dark:hover:bg-slate-800/80':
-                        parent.state.d_activeIndex !== context.index,
-                    'hover:border-surface-500/40 dark:hover:border-primary-400':
-                        parent.state.d_activeIndex !== context.index,
-                    'hover:text-slate-900 dark:hover:text-slate-50':
-                        parent.state.d_activeIndex !== context.index,
+                    'hover:bg-surface-0 dark:hover:bg-surface-800/80': parent.state.d_activeIndex !== context.index,
+                    'hover:border-surface-400 dark:hover:border-primary-400': parent.state.d_activeIndex !== context.index,
+                    'hover:text-surface-900 dark:hover:text-surface-0': parent.state.d_activeIndex !== context.index
                 },
 
                 // Transitions
@@ -139,29 +128,29 @@ export default {
                 // Misc
                 'cursor-pointer select-none text-decoration-none',
                 'overflow-hidden',
-                'user-select-none',
-            ],
+                'user-select-none'
+            ]
         }),
         headerTitle: {
             class: [
                 // Text
                 'leading-none',
-                'whitespace-nowrap',
-            ],
+                'whitespace-nowrap'
+            ]
         },
         content: {
             class: [
                 // Spacing
-                // 'p-5',
+                'p-5',
 
                 // Shape
-                'rounded-b-2xl',
+                'rounded-b-md',
 
                 // Colors
-                'bg-slate-50 dark:bg-surface-900',
-                'text-slate-700 dark:text-surface-50/80',
-                'border-0',
-            ],
-        },
-    },
-}
+                'bg-surface-0 dark:bg-surface-800',
+                'text-surface-700 dark:text-surface-0/80',
+                'border-0'
+            ]
+        }
+    }
+};

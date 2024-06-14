@@ -12,10 +12,10 @@ export default {
 
             // Misc
             'cursor-pointer',
-            'select-none',
-        ],
+            'select-none'
+        ]
     },
-    input: ({ props, state }) => ({
+    box: ({ props }) => ({
         class: [
             // Flexbox
             'flex justify-center items-center',
@@ -32,35 +32,52 @@ export default {
 
             // Colors
             {
-                'text-slate-700 dark:text-surface-50':
-                    props.value !== props.modelValue &&
-                    props.value !== undefined,
-                'bg-slate-50 dark:bg-surface-900':
-                    props.value !== props.modelValue &&
-                    props.value !== undefined,
-                'border-surface-500/40 ':
-                    props.value !== props.modelValue &&
-                    props.value !== undefined,
-                'border-primary-500 dark:border-primary-400':
-                    props.value == props.modelValue &&
-                    props.value !== undefined,
-                'bg-primary-500 dark:bg-primary-400':
-                    props.value == props.modelValue &&
-                    props.value !== undefined,
+                'text-surface-700 dark:text-white/80': props.value !== props.modelValue && props.value !== undefined,
+                'bg-surface-0 dark:bg-surface-900': props.value !== props.modelValue && props.value !== undefined,
+                'border-surface-300 dark:border-surface-700': props.value !== props.modelValue && props.value !== undefined && !props.invalid,
+                'border-primary': props.value == props.modelValue && props.value !== undefined,
+                'bg-primary': props.value == props.modelValue && props.value !== undefined
             },
+            // Invalid State
+            { 'border-red-500 dark:border-red-400': props.invalid },
 
             // States
             {
-                'hover:border-primary-600 dark:hover:border-primary-300':
-                    !props.disabled,
-                'outline-none outline-offset-0':
-                    !props.disabled && state.focused,
-                'ring ring-primary-400/50 dark:ring-primary-300/50':
-                    !props.disabled && state.focused,
-                'opacity-60 cursor-default': props.disabled,
-            },
-        ],
+                'peer-hover:border-primary dark:peer-hover:border-primary': !props.disabled && !props.invalid,
+                'peer-hover:border-primary-hover peer-hover:bg-primary-hover': !props.disabled && props.value == props.modelValue && props.value !== undefined,
+                'peer-focus-visible:border-primary-500 dark:peer-focus-visible:border-primary-400 peer-focus-visible:ring-2 peer-focus-visible:ring-primary-400/20 dark:peer-focus-visible:ring-primary-300/20': !props.disabled,
+                'opacity-60 cursor-default': props.disabled
+            }
+        ]
     }),
+    input: {
+        class: [
+            'peer',
+
+            // Size
+            'w-full ',
+            'h-full',
+
+            // Position
+            'absolute',
+            'top-0 left-0',
+            'z-10',
+
+            // Spacing
+            'p-0',
+            'm-0',
+
+            // Shape
+            'opacity-0',
+            'rounded-md',
+            'outline-none',
+            'border-2 border-surface-200 dark:border-surface-700',
+
+            // Misc
+            'appearance-none',
+            'cursor-pointer'
+        ]
+    },
     icon: ({ props }) => ({
         class: [
             'block',
@@ -69,22 +86,19 @@ export default {
             'rounded-full',
 
             // Size
-            'w-3',
-            'h-3',
+            'w-[0.857rem] h-[0.857rem]',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-900',
+            'bg-surface-0 dark:bg-surface-900',
 
             // Conditions
             {
-                'backface-hidden scale-10 invisible':
-                    props.value !== props.modelValue,
-                'transform visible scale-[1.1]':
-                    props.value == props.modelValue,
+                'backface-hidden scale-10 invisible': props.value !== props.modelValue,
+                'transform visible scale-[1.1]': props.value == props.modelValue
             },
 
             // Transition
-            'transition duration-200',
-        ],
-    }),
-}
+            'transition duration-200'
+        ]
+    })
+};

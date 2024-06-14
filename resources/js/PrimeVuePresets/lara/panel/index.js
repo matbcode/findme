@@ -5,22 +5,19 @@ export default {
             'flex items-center justify-between',
 
             // Colors
-            'text-slate-700 dark:text-surface-50/80',
-            'bg-slate-50 dark:bg-surface-900',
-            'border border-1 border-surface-500/40 ',
+            'text-surface-700 dark:text-surface-0/80',
+            'bg-surface-50 dark:bg-surface-900',
+            'border border-surface-200 dark:border-surface-700',
 
             //Shape
-            'rounded-2xl',
+            'rounded-tl-lg rounded-tr-lg',
 
             // Conditional Spacing
-            {
-                'p-5': !props.toggleable,
-                'py-3 px-5': props.toggleable,
-            },
-        ],
+            { 'p-5': !props.toggleable, 'py-3 px-5': props.toggleable }
+        ]
     }),
     title: {
-        class: 'leading-none font-bold',
+        class: 'leading-none font-bold'
     },
     toggler: {
         class: [
@@ -37,11 +34,11 @@ export default {
 
             //Color
             'bg-transparent',
-            'text-slate-600 dark:text-surface-50/80',
+            'text-surface-600 dark:text-surface-0/80',
 
             // States
-            'hover:text-slate-800 dark:hover:text-slate-50/80',
-            'hover:bg-slate-100 dark:hover:bg-slate-800/80',
+            'hover:text-surface-800 dark:hover:text-surface-0/80',
+            'hover:bg-surface-100 dark:hover:bg-surface-800/80',
             'focus:outline-none focus:outline-offset-0 focus-visible:ring focus-visible:ring-primary-400/50 focus-visible:ring-inset dark:focus-visible:ring-primary-300/50',
 
             // Transitions
@@ -49,11 +46,11 @@ export default {
 
             // Misc
             'overflow-hidden no-underline',
-            'cursor-pointer',
-        ],
+            'cursor-pointer'
+        ]
     },
     togglerIcon: {
-        class: 'inline-block',
+        class: 'inline-block'
     },
     content: {
         class: [
@@ -61,13 +58,13 @@ export default {
             'p-5',
 
             // Shape
-            'border border-t-0 last:rounded-br-2xl last:rounded-bl-2xl',
+            'border border-t-0 last:rounded-br-lg last:rounded-bl-lg',
 
             //Color
-            'border-surface-500/40 ',
-            'bg-slate-50 dark:bg-surface-900',
-            'text-slate-700 dark:text-surface-50/80',
-        ],
+            'border-surface-200 dark:border-surface-700',
+            'bg-surface-0 dark:bg-surface-900',
+            'text-surface-700 dark:text-surface-0/80'
+        ]
     },
     footer: {
         class: [
@@ -75,22 +72,20 @@ export default {
             'py-3 p-5',
 
             // Shape
-            'border border-t-0 rounded-br-2xl rounded-bl-2xl',
+            'border border-t-0 rounded-br-lg rounded-bl-lg',
 
             //Color
-            'border-surface-500/40 ',
-            'bg-slate-50 dark:bg-surface-900',
-            'text-slate-700 dark:text-surface-50/80',
-        ],
+            'border-surface-200 dark:border-surface-700',
+            'bg-surface-0 dark:bg-surface-900',
+            'text-surface-700 dark:text-surface-0/80'
+        ]
     },
     transition: {
         enterFromClass: 'max-h-0',
-        enterActiveClass:
-            'overflow-hidden transition-[max-height] duration-1000 ease-[cubic-bezier(0.42,0,0.58,1)]',
+        enterActiveClass: 'overflow-hidden transition-[max-height] duration-1000 ease-[cubic-bezier(0.42,0,0.58,1)]',
         enterToClass: 'max-h-[1000px]',
         leaveFromClass: 'max-h-[1000px]',
-        leaveActiveClass:
-            'overflow-hidden transition-[max-height] duration-[450ms] ease-[cubic-bezier(0,1,0,1)]',
-        leaveToClass: 'max-h-0',
-    },
-}
+        leaveActiveClass: 'overflow-hidden transition-[max-height] duration-[450ms] ease-[cubic-bezier(0,1,0,1)]',
+        leaveToClass: 'max-h-0'
+    }
+};

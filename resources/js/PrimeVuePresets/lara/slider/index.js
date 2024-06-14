@@ -4,23 +4,17 @@ export default {
             'relative',
 
             // Size
-            {
-                'h-1 w-60': props.orientation == 'horizontal',
-                'w-1 h-56': props.orientation == 'vertical',
-            },
+            { 'h-1 w-60': props.orientation == 'horizontal', 'w-1 h-56': props.orientation == 'vertical' },
 
             // Shape
             'border-0',
 
             // Colors
-            'bg-slate-100 dark:bg-surface-800',
+            'bg-surface-100 dark:bg-surface-700',
 
             // States
-            {
-                'opacity-60 select-none pointer-events-none cursor-default':
-                    props.disabled,
-            },
-        ],
+            { 'opacity-60 select-none pointer-events-none cursor-default': props.disabled }
+        ]
     }),
     range: ({ props }) => ({
         class: [
@@ -28,18 +22,18 @@ export default {
             'block absolute',
             {
                 'top-0 left-0': props.orientation == 'horizontal',
-                'bottom-0 left-0': props.orientation == 'vertical',
+                'bottom-0 left-0': props.orientation == 'vertical'
             },
 
             //Size
             {
                 'h-full': props.orientation == 'horizontal',
-                'w-full': props.orientation == 'vertical',
+                'w-full': props.orientation == 'vertical'
             },
 
             // Colors
-            'bg-primary-500 dark:bg-primary-400',
-        ],
+            'bg-primary'
+        ]
     }),
     handle: ({ props }) => ({
         class: [
@@ -49,10 +43,8 @@ export default {
             'h-[1.143rem]',
             'w-[1.143rem]',
             {
-                'top-[50%] mt-[-0.5715rem] ml-[-0.5715rem]':
-                    props.orientation == 'horizontal',
-                'left-[50%] mb-[-0.5715rem] ml-[-0.5715rem]':
-                    props.orientation == 'vertical',
+                'top-[50%] mt-[-0.5715rem] ml-[-0.5715rem]': props.orientation == 'horizontal',
+                'left-[50%] mb-[-0.5715rem] ml-[-0.5715rem]': props.orientation == 'vertical'
             },
 
             // Shape
@@ -60,12 +52,12 @@ export default {
             'border-2',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-800',
-            'border-primary-500 dark:border-primary-400',
+            'bg-surface-0 dark:bg-surface-600',
+            'border-primary',
 
             // States
-            'hover:bg-primary-500 hover:border-primary-500',
-            'focus:outline-none focus:outline-offset-0 focus:ring',
+            'hover:bg-primary-hover',
+            'focus-visible:outline-none focus-visible:outline-offset-0 focus-visible:ring',
             'ring-primary-400/50 dark:ring-primary-300/50',
 
             // Transitions
@@ -73,8 +65,8 @@ export default {
 
             // Misc
             'cursor-grab',
-            'touch-action-none',
-        ],
+            'touch-action-none'
+        ]
     }),
     starthandler: ({ props }) => ({
         class: [
@@ -84,10 +76,8 @@ export default {
             'h-[1.143rem]',
             'w-[1.143rem]',
             {
-                'top-[50%] mt-[-0.5715rem] ml-[-0.5715rem]':
-                    props.orientation == 'horizontal',
-                'left-[50%] mb-[-0.5715rem] ml-[-0.4715rem]':
-                    props.orientation == 'vertical',
+                'top-[50%] mt-[-0.5715rem] ml-[-0.5715rem]': props.orientation == 'horizontal',
+                'left-[50%] mb-[-0.5715rem] ml-[-0.4715rem]': props.orientation == 'vertical'
             },
 
             // Shape
@@ -95,21 +85,21 @@ export default {
             'border-2',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-800',
-            'border-primary-500 dark:border-primary-400',
+            'bg-surface-0 dark:bg-surface-600',
+            'border-primary',
 
             // States
-            'hover:bg-primary-500 hover:border-primary-500',
-            'focus:outline-none focus:outline-offset-0 focus:ring',
-            'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
+            'hover:bg-primary-hover',
+            'focus-visible:outline-none focus-visible:outline-offset-0 focus-visible:ring',
+            'focus-visible:ring-primary-400/50 dark:focus-visible:ring-primary-300/50',
 
             // Transitions
             'transition duration-200',
 
             // Misc
             'cursor-grab',
-            'touch-action-none',
-        ],
+            'touch-action-none'
+        ]
     }),
     endhandler: ({ props }) => ({
         class: [
@@ -119,10 +109,8 @@ export default {
             'h-[1.143rem]',
             'w-[1.143rem]',
             {
-                'top-[50%] mt-[-0.5715rem] ml-[-0.5715rem]':
-                    props.orientation == 'horizontal',
-                'left-[50%] mb-[-0.5715rem] ml-[-0.4715rem]':
-                    props.orientation == 'vertical',
+                'top-[50%] mt-[-0.5715rem] ml-[-0.5715rem]': props.orientation == 'horizontal',
+                'left-[50%] mb-[-0.5715rem] ml-[-0.4715rem]': props.orientation == 'vertical'
             },
 
             // Shape
@@ -130,20 +118,20 @@ export default {
             'border-2',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-800',
-            'border-primary-500 dark:border-primary-400',
+            'bg-surface-0 dark:bg-surface-600',
+            'border-primary',
 
             // States
-            'hover:bg-primary-500 hover:border-primary-500',
-            'focus:outline-none focus:outline-offset-0 focus:ring',
-            'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
+            'hover:bg-primary-hover',
+            'focus-visible:outline-none focus-visible:outline-offset-0 focus-visible:ring',
+            'focus-visible:ring-primary-400/50 dark:focus-visible:ring-primary-300/50',
 
             // Transitions
             'transition duration-200',
 
             // Misc
             'cursor-grab',
-            'touch-action-none',
-        ],
-    }),
-}
+            'touch-action-none'
+        ]
+    })
+};

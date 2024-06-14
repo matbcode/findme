@@ -1,15 +1,8 @@
 export default {
     root: ({ props }) => ({
-        class: [
-            {
-                'opacity-60 select-none pointer-events-none cursor-default':
-                    props.disabled,
-            },
-            'shadow-sm rounded-2xl',
-            'w-max',
-        ],
+        class: [{ 'opacity-60 select-none pointer-events-none cursor-default': props.disabled }]
     }),
-    button: ({ context }) => ({
+    button: ({ context, props }) => ({
         class: [
             'relative',
             // Font
@@ -19,45 +12,38 @@ export default {
             'inline-flex items-center align-bottom text-center',
 
             // Spacing
-            'px-[12px] py-[10px]',
-            'min-h-[42px]',
+            'px-4 py-3',
 
             // Shape
-            'border-0 border-r-0',
-            'first:rounded-l-2xl first:rounded-tr-none first:rounded-br-none',
-            'last:border-r-0 last:rounded-tl-none last:rounded-bl-none last:rounded-r-2xl',
+            'border border-r-0',
+            'first:rounded-l-md first:rounded-tr-none first:rounded-br-none',
+            'last:border-r last:rounded-tl-none last:rounded-bl-none last:rounded-r-md',
 
             // Color
             {
-                'bg-gradient-to-b from-white to-surface-50 dark:from-surface-800 dark:to-surface-800 hover:from-surface-50 hover:to-surface-100':
-                    !context.active,
-                'text-slate-700 dark:text-surface-50':
-                    !context.active,
-                'border-surface-500/40 ': !context.active,
-                'bg-gradient-to-b from-slate-200 to-slate-100 dark:from-surface-800/20 dark:to-surface-800/20  dark:bg-surface-900 dark:text-surface-50  shadow-inner':
-                    context.active,
+                'bg-surface-0 dark:bg-surface-900': !context.active,
+                'text-surface-700 dark:text-white/80': !context.active,
+                'border-surface-200 dark:border-surface-700': !context.active && !props.invalid,
+                'bg-primary border-primary text-primary-inverse': context.active
             },
+            // Invalid State
+            { 'border-red-500 dark:border-red-400': props.invalid },
 
             // States
-            'focus:outline-none',
+            'focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 focus:z-10',
             {
-                'hover:bg-slate-50 dark:hover:bg-slate-700 ':
-                    !context.active,
-                'hover:bg-slate-200 dark:hover:bg-slate-800/20':
-                    context.active,
+                'hover:bg-surface-50 dark:hover:bg-surface-800/80': !context.active && !props.invalid,
+                'hover:bg-primary-hover': context.active
             },
-            {
-                'opacity-60 select-none pointer-events-none cursor-default':
-                    context.disabled,
-            },
+            { 'opacity-60 select-none pointer-events-none cursor-default': context.disabled },
             // Transition
             'transition duration-200',
 
             // Misc
-            'cursor-pointer select-none overflow-hidden',
-        ],
+            'cursor-pointer select-none overflow-hidden'
+        ]
     }),
     label: {
-        // class: "font-bold",
-    },
-}
+        class: 'font-bold'
+    }
+};

@@ -2,21 +2,18 @@ export default {
     root: {
         class: [
             // Shape
-            'rounded-2xl',
+            'rounded-md',
 
             // Spacing
-            // 'p-4',
+            'p-4',
 
             // Color
-            'text-blue-600 dark:text-blue-500',
-            // 'bg-slate-50 dark:bg-surface-800',
-            // 'border border-surface-500/40 ',
+            'bg-surface-0 dark:bg-surface-700',
+            'border border-surface-200 dark:border-surface-700',
 
             // Misc
-            'overflow-x-auto',
-            'overflow-y-hidden',
-            'text-sm',
-        ],
+            'overflow-x-auto'
+        ]
     },
     menu: {
         class: [
@@ -24,8 +21,8 @@ export default {
             'flex items-center flex-nowrap',
 
             // Spacing
-            'm-0 p-0 list-none leading-none',
-        ],
+            'm-0 p-0 list-none leading-none'
+        ]
     },
     action: {
         class: [
@@ -33,10 +30,10 @@ export default {
             'flex items-center',
 
             // Shape
-            'rounded-2xl',
+            'rounded-md',
 
             // Color
-            'text-blue-600 dark:text-blue-500',
+            'text-surface-600 dark:text-white/70',
 
             // States
             'focus-visible:outline-none focus-visible:outline-offset-0',
@@ -46,11 +43,11 @@ export default {
             'transition-shadow duration-200',
 
             // Misc
-            'text-decoration-none',
-        ],
+            'text-decoration-none'
+        ]
     },
     icon: {
-        class: 'text-blue-600 dark:text-blue-500',
+        class: 'text-surface-600 dark:text-white/70'
     },
     separator: {
         class: [
@@ -61,7 +58,7 @@ export default {
             ' mx-2',
 
             // Color
-            'text-blue-600 dark:text-blue-500',
-        ],
-    },
-}
+            'text-surface-600 dark:text-white/70'
+        ]
+    }
+};

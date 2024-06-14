@@ -2,8 +2,8 @@ export default {
     root: {
         class: [
             // Flexbox
-            'flex lg:flex-row flex-col',
-        ],
+            'flex lg:flex-row flex-col'
+        ]
     },
     sourcecontrols: {
         class: [
@@ -11,8 +11,8 @@ export default {
             'flex lg:flex-col justify-center gap-2',
 
             // Spacing
-            'p-5',
-        ],
+            'p-5'
+        ]
     },
     sourcemoveupbutton: {
         root: ({ context }) => ({
@@ -21,12 +21,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -37,17 +37,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -55,9 +52,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     sourcemovetopbutton: {
         root: ({ context }) => ({
@@ -66,12 +63,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -82,17 +79,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -100,9 +94,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     sourcemovedownbutton: {
         root: ({ context }) => ({
@@ -111,12 +105,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -127,17 +121,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -145,9 +136,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     sourcemovebottombutton: {
         root: ({ context }) => ({
@@ -156,12 +147,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -172,17 +163,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -190,28 +178,28 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     sourcewrapper: {
-        class: 'grow shrink basis-2/4',
+        class: 'grow shrink basis-2/4'
     },
     sourceheader: {
         class: [
             'font-bold',
 
             // Shape
-            'border-b-0 rounded-t-2xl',
+            'border-b-0 rounded-t-md',
 
             // Spacing
             'p-5',
 
             // Color
-            'text-slate-700 dark:text-surface-50',
-            'bg-slate-50 dark:bg-surface-900',
-            'border border-surface-500/40 ',
-        ],
+            'text-surface-700 dark:text-white/80',
+            'bg-surface-50 dark:bg-surface-800',
+            'border border-surface-200 dark:border-surface-700'
+        ]
     },
     sourcelist: {
         class: [
@@ -222,12 +210,12 @@ export default {
             'min-h-[12rem] max-h-[24rem]',
 
             // Shape
-            'rounded-b-2xl',
+            'rounded-b-md',
 
             // Color
-            'text-slate-600 dark:text-surface-50',
-            'bg-slate-50 dark:bg-surface-900',
-            'border border-surface-500/40 ',
+            'text-surface-600 dark:text-white/80',
+            'bg-surface-0 dark:bg-surface-800',
+            'border border-surface-200 dark:border-surface-700',
 
             // Spacing
             'py-3 px-0',
@@ -236,8 +224,8 @@ export default {
             'outline-none',
 
             // Misc
-            'overflow-auto',
-        ],
+            'overflow-auto'
+        ]
     },
     item: ({ context }) => ({
         class: [
@@ -254,29 +242,21 @@ export default {
             'transition duration-200',
 
             // Color
-            'text-slate-700 dark:text-surface-50',
-            {
-                'bg-primary-500/20 dark:bg-primary-300/20':
-                    context.active && !context.focused,
-            },
-            {
-                'bg-primary-500/30 dark:bg-primary-400/30':
-                    context.active && context.focused,
-            },
-            {
-                'bg-slate-100 dark:bg-surface-800/70':
-                    !context.active && context.focused,
-            },
+            { 'text-surface-700 dark:text-white/80 bg-surface-0 dark:bg-surface-900': !context.active },
+            { 'text-primary-highlight-inverse bg-primary-highlight': context.active },
 
             // State
-            'hover:bg-slate-100 dark:hover:bg-slate-700',
+            {
+                'hover:bg-surface-100 dark:hover:bg-surface-700': !context.active,
+                'hover:bg-primary-highlight-hover': context.active
+            },
 
             // Misc
-            'cursor-pointer overflow-hidden',
-        ],
+            'cursor-pointer overflow-hidden'
+        ]
     }),
     buttons: {
-        class: 'flex lg:flex-col justify-center gap-2 p-5',
+        class: 'flex lg:flex-col justify-center gap-2 p-5'
     },
     movetotargetbutton: {
         root: ({ context }) => ({
@@ -285,12 +265,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -301,17 +281,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -319,9 +296,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     movealltotargetbutton: {
         root: ({ context }) => ({
@@ -330,12 +307,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -346,17 +323,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -364,9 +338,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     movetosourcebutton: {
         root: ({ context }) => ({
@@ -375,12 +349,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -391,17 +365,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -409,9 +380,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     movealltosourcebutton: {
         root: ({ context }) => ({
@@ -420,12 +391,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -436,17 +407,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -454,12 +422,12 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     targetcontrols: {
-        class: 'flex lg:flex-col justify-center gap-2 p-5',
+        class: 'flex lg:flex-col justify-center gap-2 p-5'
     },
     targetmoveupbutton: {
         root: ({ context }) => ({
@@ -468,12 +436,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -484,17 +452,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -502,9 +467,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     targetmovetopbutton: {
         root: ({ context }) => ({
@@ -513,12 +478,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -529,17 +494,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -547,9 +509,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     targetmovedownbutton: {
         root: ({ context }) => ({
@@ -558,12 +520,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -574,17 +536,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -592,9 +551,9 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     targetmovebottombutton: {
         root: ({ context }) => ({
@@ -603,12 +562,12 @@ export default {
                 'relative inline-flex items-center justify-center',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Color
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // Spacing & Size
                 'w-12',
@@ -619,17 +578,14 @@ export default {
                 'transition duration-200 ease-in-out',
 
                 // State
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
+                'hover:bg-primary-hover hover:border-primary-hover',
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-                {
-                    'cursor-default pointer-events-none opacity-60':
-                        context.disabled,
-                },
+                'focus:ring-primary/50',
+                { 'cursor-default pointer-events-none opacity-60': context.disabled },
 
                 // Interactivity
-                'cursor-pointer user-select-none',
-            ],
+                'cursor-pointer user-select-none'
+            ]
         }),
         label: {
             class: [
@@ -637,28 +593,28 @@ export default {
                 'flex-initial',
 
                 // Size
-                'w-0',
-            ],
-        },
+                'w-0'
+            ]
+        }
     },
     targetwrapper: {
-        class: 'grow shrink basis-2/4',
+        class: 'grow shrink basis-2/4'
     },
     targetheader: {
         class: [
             'font-bold',
 
             // Shape
-            'border-b-0 rounded-t-2xl',
+            'border-b-0 rounded-t-md',
 
             // Spacing
             'p-5',
 
             // Color
-            'text-slate-700 dark:text-surface-50',
-            'bg-slate-50 dark:bg-surface-900',
-            'border border-surface-500/40 ',
-        ],
+            'text-surface-700 dark:text-white/80',
+            'bg-surface-50 dark:bg-surface-800',
+            'border border-surface-200 dark:border-surface-700'
+        ]
     },
     targetlist: {
         class: [
@@ -669,12 +625,12 @@ export default {
             'min-h-[12rem] max-h-[24rem]',
 
             // Shape
-            'rounded-b-2xl',
+            'rounded-b-md',
 
             // Color
-            'text-slate-600 dark:text-surface-50',
-            'bg-slate-50 dark:bg-surface-900',
-            'border border-surface-500/40 ',
+            'text-surface-600 dark:text-white/80',
+            'bg-surface-0 dark:bg-surface-800',
+            'border border-surface-200 dark:border-surface-700',
 
             // Spacing
             'py-3 px-0',
@@ -683,13 +639,13 @@ export default {
             'outline-none',
 
             // Misc
-            'overflow-auto',
-        ],
+            'overflow-auto'
+        ]
     },
     transition: {
         enterFromClass: '!transition-none',
         enterActiveClass: '!transition-none',
         leaveActiveClass: '!transition-none',
-        leaveToClass: '!transition-none',
-    },
-}
+        leaveToClass: '!transition-none'
+    }
+};

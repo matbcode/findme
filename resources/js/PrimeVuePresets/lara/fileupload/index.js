@@ -1,6 +1,6 @@
 export default {
     input: {
-        class: 'hidden',
+        class: 'hidden'
     },
     buttonbar: {
         class: [
@@ -10,7 +10,7 @@ export default {
 
             // Colors
             'bg-surface-50',
-            'dark:bg-surface-900',
+            'dark:bg-surface-800',
             'text-surface-700',
             'dark:text-white/80',
 
@@ -26,55 +26,55 @@ export default {
             'border-b-0',
 
             // Shape
-            'rounded-tr-2xl',
-            'rounded-tl-2xl',
-        ],
+            'rounded-tr-lg',
+            'rounded-tl-lg'
+        ]
     },
     chooseButton: {
         class: [
-            'relative transition-all duration-300',
+            'relative',
 
             // Alignments
             'items-center inline-flex text-center align-bottom justify-center',
 
             // Spacing
-            'px-3 py-3',
+            'px-4 py-3',
 
             // Shape
-            'rounded-2xl',
+            'rounded-md',
 
             // Font
             'leading-[normal]',
-            'text-sm font-semibold',
+            'font-bold',
 
             // Colors
-            'text-surface-800 dark:text-surface-100',
-            'bg-primary-600 dark:bg-primary-800',
-            // 'border-primary-600 dark:border-primary-400',
+            'text-primary-inverse',
+            'bg-primary',
+            'border-primary',
 
             // States
-            'hover:bg-primary-500 dark:hover:bg-primary-600',
+            'hover:bg-primary-hover',
 
             // Misc
             'overflow-hidden',
-            'cursor-pointer',
-        ],
+            'cursor-pointer'
+        ]
     },
     chooseIcon: {
-        class: ['mr-2', 'inline-block'],
+        class: ['mr-2', 'inline-block']
     },
     chooseButtonLabel: {
-        class: ['flex-1', 'font-bold'],
+        class: ['flex-1', 'font-bold']
     },
     uploadbutton: {
         icon: {
-            class: 'mr-2',
-        },
+            class: 'mr-2'
+        }
     },
     cancelbutton: {
         icon: {
-            class: 'mr-2',
-        },
+            class: 'mr-2'
+        }
     },
     content: {
         class: [
@@ -96,8 +96,8 @@ export default {
             'dark:border-surface-700',
 
             // Shape
-            'rounded-b-2xl',
-        ],
+            'rounded-b-lg'
+        ]
     },
     file: {
         class: [
@@ -118,20 +118,20 @@ export default {
             'gap-2',
 
             // Shape
-            'rounded',
-        ],
+            'rounded'
+        ]
     },
     thumbnail: {
-        class: 'shrink-0',
+        class: 'shrink-0'
     },
     fileName: {
-        class: 'mb-2',
+        class: 'mb-2 break-all'
     },
     fileSize: {
-        class: 'mr-2',
+        class: 'mr-2'
     },
     uploadicon: {
-        class: 'mr-2',
+        class: 'mr-2'
     },
     progressbar: {
         root: {
@@ -143,12 +143,12 @@ export default {
                 // Shape and Size
                 'border-0',
                 'h-2',
-                'rounded-2xl',
+                'rounded-md',
                 'w-full',
 
                 // Colors
-                'bg-surface-100 dark:bg-surface-800',
-            ],
+                'bg-surface-100 dark:bg-surface-700'
+            ]
         },
         value: {
             class: [
@@ -156,7 +156,7 @@ export default {
                 'absolute flex items-center justify-center overflow-hidden',
 
                 // Colors
-                'bg-primary-500 dark:bg-primary-400',
+                'bg-primary',
 
                 // Spacing & Sizing
                 'm-0',
@@ -166,8 +166,8 @@ export default {
                 'border-0',
 
                 // Transitions
-                'transition-width duration-1000 ease-in-out',
-            ],
-        },
-    },
-}
+                'transition-width duration-1000 ease-in-out'
+            ]
+        }
+    }
+};

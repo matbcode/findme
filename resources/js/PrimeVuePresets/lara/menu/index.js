@@ -3,15 +3,14 @@ export default {
         class: [
             // Sizing and Shape
             'min-w-[12rem]',
-            'rounded-2xl',
-            'shadow-sm',
+            'rounded-md',
             // Spacing
-            'py-0',
+            'py-2',
             // Colors
-            'bg-slate-50 dark:bg-surface-900',
-            'text-slate-700 dark:text-surface-50',
-            'border border-surface-500/40 ',
-        ],
+            'bg-surface-0 dark:bg-surface-700',
+            'text-surface-700 dark:text-white/80',
+            'border border-surface-200 dark:border-surface-700'
+        ]
     },
     menu: {
         class: [
@@ -19,26 +18,25 @@ export default {
             'list-none',
             'm-0',
             'p-0',
-            'outline-none',
-        ],
+            'outline-none'
+        ]
     },
     content: ({ context }) => ({
         class: [
             //Shape
-            'rounded-2xl',
+            'rounded-none',
             // Colors
-            'text-slate-700 dark:text-surface-50',
+            'text-surface-700 dark:text-white/80',
             {
-                'bg-slate-200 text-slate-700 dark:bg-surface-300/10 dark:text-surface-50':
-                    context.focused,
+                'bg-surface-200 text-surface-700 dark:bg-surface-300/10 dark:text-white': context.focused
             },
             // Transitions
             'transition-shadow',
             'duration-200',
             // States
-            'hover:text-slate-700 dark:hover:text-white/80',
-            'hover:bg-slate-100 dark:bg-surface-900 dark:hover:bg-slate-400/10',
-        ],
+            'hover:text-surface-700 dark:hover:text-white/80',
+            'hover:bg-surface-100 dark:bg-surface-700 dark:hover:bg-surface-400/10'
+        ]
     }),
     action: {
         class: [
@@ -53,14 +51,14 @@ export default {
             'px-5',
 
             // Color
-            'text-slate-700 dark:text-surface-50',
+            'text-surface-700 dark:text-white/80',
 
             // Misc
             'no-underline',
             'overflow-hidden',
             'cursor-pointer',
-            'select-none',
-        ],
+            'select-none'
+        ]
     },
     icon: {
         class: [
@@ -68,16 +66,16 @@ export default {
             'mr-2',
 
             // Color
-            'text-slate-600 dark:text-surface-50',
-        ],
+            'text-surface-600 dark:text-white/70'
+        ]
     },
     label: {
-        class: ['leading-none'],
+        class: ['leading-none']
     },
     submenuheader: {
         class: [
             // Font
-            'text-sm text-surface-600 dark:text-surface-500',
+            'font-bold',
             // Spacing
             'm-0',
             'py-3 px-5',
@@ -85,16 +83,14 @@ export default {
             'rounded-tl-none',
             'rounded-tr-none',
             // Colors
-            'bg-slate-50 dark:bg-surface-900',
-            'text-slate-700 dark:text-surface-50',
-        ],
+            'bg-surface-0 dark:bg-surface-700',
+            'text-surface-700 dark:text-white'
+        ]
     },
     transition: {
         enterFromClass: 'opacity-0 scale-y-[0.8]',
-        enterActiveClass:
-            'transition-[transform,opacity] duration-[120ms] ease-[cubic-bezier(0,0,0.2,1)]',
-        leaveActiveClass:
-            'transition-opacity duration-100 ease-linear',
-        leaveToClass: 'opacity-0',
-    },
-}
+        enterActiveClass: 'transition-[transform,opacity] duration-[120ms] ease-[cubic-bezier(0,0,0.2,1)]',
+        leaveActiveClass: 'transition-opacity duration-100 ease-linear',
+        leaveToClass: 'opacity-0'
+    }
+};

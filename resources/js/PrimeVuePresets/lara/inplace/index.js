@@ -8,7 +8,7 @@ export default {
             'p-3',
 
             // Shape
-            'rounded-2xl',
+            'rounded-md',
 
             // Colors
             'text-surface-700 dark:text-white/80',
@@ -21,7 +21,7 @@ export default {
             'duration-200',
 
             // Misc
-            'cursor-pointer',
-        ],
-    },
-}
+            'cursor-pointer'
+        ]
+    }
+};

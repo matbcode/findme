@@ -7,56 +7,50 @@ export default {
             'relative',
 
             // Misc
-            {
-                'opacity-60 select-none pointer-events-none cursor-default':
-                    props.disabled,
-            },
-        ],
+            { 'opacity-60 select-none pointer-events-none cursor-default': props.disabled }
+        ]
     }),
-    input: ({ props }) => ({
+    input: ({ props, parent }) => ({
         class: [
+            // Display
+            'flex flex-auto',
+
             // Font
-            'font-sans leading-none',
+            'leading-none',
 
             // Colors
-            'text-slate-600 dark:text-surface-50',
-            'placeholder:text-slate-400 dark:placeholder:text-slate-500',
-            'bg-slate-50 dark:bg-surface-900',
-            'border border-surface-500/40 ',
+            'text-surface-600 dark:text-surface-200',
+            'placeholder:text-surface-400 dark:placeholder:text-surface-500',
+            'bg-surface-0 dark:bg-surface-900',
+            'border',
+            { 'border-surface-300 dark:border-surface-600': !props.invalid },
+
+            // Invalid State
+            { 'border-red-500 dark:border-red-400': props.invalid },
 
             // Spacing
             'm-0 p-3',
 
             // Shape
             'appearance-none',
-            {
-                'rounded-2xl':
-                    !props.showIcon || props.iconDisplay == 'input',
-            },
-            {
-                'rounded-l-2xl  flex-1 pr-9':
-                    props.showIcon && props.iconDisplay !== 'input',
-            },
-            {
-                'rounded-2xl flex-1 pr-9':
-                    props.showIcon && props.iconDisplay === 'input',
-            },
+            { 'rounded-md': !props.showIcon || props.iconDisplay == 'input' },
+            { 'rounded-l-md  flex-1 pr-9': props.showIcon && props.iconDisplay !== 'input' },
+            { 'rounded-md flex-1 pr-9': props.showIcon && props.iconDisplay === 'input' },
 
             // Transitions
             'transition-colors',
             'duration-200',
 
             // States
-            'hover:border-primary-500 dark:hover:border-primary-400',
+            { 'hover:border-primary-hover': !props.invalid },
             'focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50',
-        ],
+
+            // Filled State *for FloatLabel
+            { filled: parent.instance?.$name == 'FloatLabel' && props.modelValue !== null }
+        ]
     }),
     inputicon: {
-        class: [
-            'absolute top-[50%] -mt-2',
-            'text-slate-600 dark:text-surface-50',
-            'right-[.75rem]',
-        ],
+        class: ['absolute top-[50%] -mt-2', 'text-surface-600 dark:text-surface-200', 'right-[.75rem]']
     },
     dropdownbutton: {
         root: {
@@ -67,57 +61,52 @@ export default {
                 'items-center inline-flex text-center align-bottom',
 
                 // Shape
-                'rounded-r-2xl',
+                'rounded-r-md',
 
                 // Size
                 'px-4 py-3 leading-none',
 
                 // Colors
-                'text-white dark:text-surface-900',
-                'bg-primary-500 dark:bg-primary-400',
-                'border border-primary-500 dark:border-primary-400',
+                'text-primary-inverse',
+                'bg-primary',
+                'border border-primary',
 
                 // States
                 'focus:outline-none focus:outline-offset-0 focus:ring',
-                'hover:bg-primary-600 dark:hover:bg-primary-300 hover:border-primary-600 dark:hover:border-primary-300',
-                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
-            ],
-        },
+                'hover:bg-primary-hover hover:border-primary-hover',
+                'focus:ring-primary-400/50 dark:focus:ring-primary-300/50'
+            ]
+        }
     },
     panel: ({ props }) => ({
         class: [
             // Display & Position
             {
                 absolute: !props.inline,
-                'inline-block': props.inline,
+                'inline-block': props.inline
             },
 
             // Size
             { 'w-auto p-2 ': !props.inline },
             { 'min-w-[80vw] w-auto p-2 ': props.touchUI },
-            { 'p-0 min-w-full': props.inline },
+            { 'p-2 min-w-full': props.inline },
 
             // Shape
-            'rounded-2xl',
+            'border rounded-lg',
             {
-                'shadow-sm border border-1 border-surface-500/40 ':
-                    !props.inline,
+                'shadow-md': !props.inline
             },
 
             // Colors
-            'bg-white dark:bg-surface-900',
-            // 'border-surface-500/40 ',
+            'bg-surface-0 dark:bg-surface-800',
+            'border-surface-200 dark:border-surface-700',
 
             //misc
-            { 'overflow-x-auto': props.inline },
-        ],
+            { 'overflow-x-auto': props.inline }
+        ]
     }),
     datepickerMask: {
-        class: [
-            'fixed top-0 left-0 w-full h-full',
-            'flex items-center justify-center',
-            'bg-black bg-opacity-90',
-        ],
+        class: ['fixed top-0 left-0 w-full h-full', 'flex items-center justify-center', 'bg-black bg-opacity-90']
     },
     header: {
         class: [
@@ -133,13 +122,13 @@ export default {
 
             // Shape
             'border-b',
-            'rounded-t-2xl',
+            'rounded-t-md',
 
             // Colors
-            'text-slate-700 dark:text-surface-50',
-            'bg-slate-50 dark:bg-surface-800/30',
-            'border-surface-500/40 ',
-        ],
+            'text-surface-700 dark:text-white/80',
+            'bg-surface-0 dark:bg-surface-800',
+            'border-surface-200 dark:border-surface-700'
+        ]
     },
     previousbutton: {
         class: [
@@ -156,7 +145,7 @@ export default {
             'rounded-full',
 
             // Colors
-            'text-slate-600 dark:text-surface-50',
+            'text-surface-600 dark:text-white/70',
             'border-0',
             'bg-transparent',
 
@@ -164,28 +153,28 @@ export default {
             'transition-colors duration-200 ease-in-out',
 
             // States
-            'hover:text-slate-700 dark:hover:text-white/80',
-            'hover:bg-slate-100 dark:hover:bg-slate-800/80',
+            'hover:text-surface-700 dark:hover:text-white/80',
+            'hover:bg-surface-100 dark:hover:bg-surface-800/80',
 
             // Misc
-            'cursor-pointer overflow-hidden',
-        ],
+            'cursor-pointer overflow-hidden'
+        ]
     },
     title: {
         class: [
             // Text
             'leading-8',
-            'mx-auto my-0',
-        ],
+            'mx-auto my-0'
+        ]
     },
     monthTitle: {
         class: [
             // Font
-            'text-base leading-5',
+            'text-base leading-[normal]',
             'font-semibold',
 
             // Colors
-            'text-slate-700 dark:text-surface-50',
+            'text-surface-700 dark:text-white/80',
 
             // Transitions
             'transition duration-200',
@@ -198,17 +187,17 @@ export default {
             'hover:text-primary-500 dark:hover:text-primary-400',
 
             // Misc
-            'cursor-pointer',
-        ],
+            'cursor-pointer'
+        ]
     },
     yearTitle: {
         class: [
             // Font
-            'text-base leading-5',
+            'text-base leading-[normal]',
             'font-semibold',
 
             // Colors
-            'text-slate-700 dark:text-surface-50',
+            'text-surface-700 dark:text-white/80',
 
             // Transitions
             'transition duration-200',
@@ -221,8 +210,8 @@ export default {
             'hover:text-primary-500 dark:hover:text-primary-400',
 
             // Misc
-            'cursor-pointer',
-        ],
+            'cursor-pointer'
+        ]
     },
     nextbutton: {
         class: [
@@ -239,7 +228,7 @@ export default {
             'rounded-full',
 
             // Colors
-            'text-slate-600 dark:text-surface-50',
+            'text-surface-600 dark:text-white/70',
             'border-0',
             'bg-transparent',
 
@@ -247,12 +236,12 @@ export default {
             'transition-colors duration-200 ease-in-out',
 
             // States
-            'hover:text-slate-700 dark:hover:text-white/80',
-            'hover:bg-slate-100 dark:hover:bg-slate-800/80',
+            'hover:text-surface-700 dark:hover:text-white/80',
+            'hover:bg-surface-100 dark:hover:bg-surface-800/80',
 
             // Misc
-            'cursor-pointer overflow-hidden',
-        ],
+            'cursor-pointer overflow-hidden'
+        ]
     },
     table: {
         class: [
@@ -263,39 +252,32 @@ export default {
             'w-full',
 
             // Spacing
-            'm-0 my-2',
-        ],
+            'm-0 my-2'
+        ]
     },
     tableheadercell: {
         class: [
             // Spacing
-            'p-0 md:p-2',
-        ],
+            'p-0 md:p-2'
+        ]
     },
     weekheader: {
-        class: [
-            'leading-5',
-            'text-slate-600 dark:text-surface-50',
-            'opacity-60 cursor-default',
-        ],
+        class: ['leading-[normal]', 'text-surface-600 dark:text-white/70', 'opacity-60 cursor-default']
     },
     weeknumber: {
-        class: [
-            'text-slate-600 dark:text-surface-50',
-            'opacity-60 cursor-default',
-        ],
+        class: ['text-surface-600 dark:text-white/70', 'opacity-60 cursor-default']
     },
     weekday: {
         class: [
             // Colors
-            'text-slate-500 dark:text-surface-50',
-        ],
+            'text-surface-500 dark:text-white/60'
+        ]
     },
     day: {
         class: [
             // Spacing
-            'p-0 md:p-2',
-        ],
+            'p-0 md:p-2'
+        ]
     },
     weeklabelcontainer: ({ context }) => ({
         class: [
@@ -310,25 +292,21 @@ export default {
 
             // Colors
             {
-                'text-slate-600 dark:text-surface-50 bg-transparent':
-                    !context.selected && !context.disabled,
-                'text-primary-700 bg-primary-100':
-                    context.selected && !context.disabled,
+                'text-surface-600 dark:text-white/70 bg-transparent': !context.selected && !context.disabled,
+                'text-primary-highlight-inverse bg-primary-highlight': context.selected && !context.disabled
             },
 
             // States
             'focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
             {
-                'hover:bg-slate-100 dark:hover:bg-slate-800/80':
-                    !context.selected && !context.disabled,
-                'hover:bg-primary-200':
-                    context.selected && !context.disabled,
+                'hover:bg-surface-100 dark:hover:bg-surface-800/80': !context.selected && !context.disabled,
+                'hover:bg-primary-highlight-hover': context.selected && !context.disabled
             },
             {
                 'opacity-60 cursor-default': context.disabled,
-                'cursor-pointer': !context.disabled,
-            },
-        ],
+                'cursor-pointer': !context.disabled
+            }
+        ]
     }),
     daylabel: ({ context }) => ({
         class: [
@@ -338,40 +316,33 @@ export default {
 
             // Shape & Size
             'w-10 h-10',
-            'rounded-2xl',
-            'border-0',
+            'rounded-full',
+            'border-transparent border',
 
             // Colors
             {
-                'text-primary-500 dark:text-primary-400':
-                    context.date.today,
-                'text-slate-600 dark:text-surface-50 bg-transparent':
-                    !context.selected &&
-                    !context.disabled &&
-                    !context.date.today,
-                'text-primary-700 border border-1 bg-primary-500/20 dark:text-surface-50':
-                    context.selected && !context.disabled,
+                'text-primary': context.date.today,
+                'text-surface-600 dark:text-white/70 bg-transparent': !context.selected && !context.disabled && !context.date.today,
+                'text-primary-highlight-inverse bg-primary-highlight': context.selected && !context.disabled
             },
 
             // States
             'focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
             {
-                'hover:bg-slate-100 dark:hover:bg-slate-600/80':
-                    !context.selected && !context.disabled,
-                'hover:bg-primary-200 dark:hover:bg-primary-200/40':
-                    context.selected && !context.disabled,
+                'hover:bg-surface-100 dark:hover:bg-surface-600/80': !context.selected && !context.disabled,
+                'hover:bg-primary-highlight-hover': context.selected && !context.disabled
             },
             {
                 'opacity-60 cursor-default': context.disabled,
-                'cursor-pointer': !context.disabled,
-            },
-        ],
+                'cursor-pointer': !context.disabled
+            }
+        ]
     }),
     monthpicker: {
         class: [
             // Spacing
-            'm-2',
-        ],
+            'my-2'
+        ]
     },
     month: ({ context }) => ({
         class: [
@@ -383,34 +354,30 @@ export default {
             'p-2',
 
             // Shape
-            'rounded-2xl',
+            'rounded-md',
 
             // Colors
             {
-                'text-slate-600 dark:text-surface-50 bg-transparent':
-                    !context.selected && !context.disabled,
-                'text-primary-700 dark:text-surface-50 bg-primary-500/20':
-                    context.selected && !context.disabled,
+                'text-surface-600 dark:text-white/70 bg-transparent': !context.selected && !context.disabled,
+                'text-primary-highlight-inverse bg-primary-highlight': context.selected && !context.disabled
             },
 
             // States
             'focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
             {
-                'hover:bg-slate-100 dark:hover:bg-slate-600/80':
-                    !context.selected && !context.disabled,
-                'hover:bg-primary-200 dark:hover:bg-primary-200/40':
-                    context.selected && !context.disabled,
+                'hover:bg-surface-100 dark:hover:bg-surface-600/80': !context.selected && !context.disabled,
+                'hover:bg-primary-highlight-hover': context.selected && !context.disabled
             },
 
             // Misc
-            'cursor-pointer',
-        ],
+            'cursor-pointer'
+        ]
     }),
     yearpicker: {
         class: [
             // Spacing
-            'm-2',
-        ],
+            'my-2'
+        ]
     },
     year: ({ context }) => ({
         class: [
@@ -422,28 +389,24 @@ export default {
             'p-2',
 
             // Shape
-            'rounded-2xl',
+            'rounded-md',
 
             // Colors
             {
-                'text-slate-600 dark:text-surface-50 bg-transparent':
-                    !context.selected && !context.disabled,
-                'text-primary-700 bg-primary-500/20 dark:text-surface-50':
-                    context.selected && !context.disabled,
+                'text-surface-600 dark:text-white/70 bg-transparent': !context.selected && !context.disabled,
+                'text-primary-highlight-inverse bg-primary-highlight': context.selected && !context.disabled
             },
 
             // States
             'focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50',
             {
-                'hover:bg-slate-100 dark:hover:bg-slate-600/80':
-                    !context.selected && !context.disabled,
-                'hover:bg-primary-200 dark:hover:bg-primary-200/40':
-                    context.selected && !context.disabled,
+                'hover:bg-surface-100 dark:hover:bg-surface-600/80': !context.selected && !context.disabled,
+                'hover:bg-primary-highlight-hover': context.selected && !context.disabled
             },
 
             // Misc
-            'cursor-pointer',
-        ],
+            'cursor-pointer'
+        ]
     }),
     timepicker: {
         class: [
@@ -453,11 +416,11 @@ export default {
 
             // Borders
             'border-t-1',
-            'border-solid border-surface-500/40',
+            'border-solid border-surface-200',
 
             // Spacing
-            'p-2',
-        ],
+            'p-2'
+        ]
     },
     separatorcontainer: {
         class: [
@@ -467,14 +430,14 @@ export default {
             'flex-col',
 
             // Spacing
-            'px-2',
-        ],
+            'px-2'
+        ]
     },
     separator: {
         class: [
             // Text
-            'text-xl',
-        ],
+            'text-xl'
+        ]
     },
     hourpicker: {
         class: [
@@ -484,8 +447,8 @@ export default {
             'flex-col',
 
             // Spacing
-            'px-2',
-        ],
+            'px-2'
+        ]
     },
     minutepicker: {
         class: [
@@ -495,8 +458,19 @@ export default {
             'flex-col',
 
             // Spacing
-            'px-2',
-        ],
+            'px-2'
+        ]
+    },
+    secondPicker: {
+        class: [
+            // Flexbox and Alignment
+            'flex',
+            'items-center',
+            'flex-col',
+
+            // Spacing
+            'px-2'
+        ]
     },
     ampmpicker: {
         class: [
@@ -506,8 +480,8 @@ export default {
             'flex-col',
 
             // Spacing
-            'px-2',
-        ],
+            'px-2'
+        ]
     },
     incrementbutton: {
         class: [
@@ -524,7 +498,7 @@ export default {
             'rounded-full',
 
             // Colors
-            'text-slate-600 dark:text-surface-50',
+            'text-surface-600 dark:text-white/70',
             'border-0',
             'bg-transparent',
 
@@ -532,12 +506,12 @@ export default {
             'transition-colors duration-200 ease-in-out',
 
             // States
-            'hover:text-slate-700 dark:hover:text-white/80',
-            'hover:bg-slate-100 dark:hover:bg-slate-800/80',
+            'hover:text-surface-700 dark:hover:text-white/80',
+            'hover:bg-surface-100 dark:hover:bg-surface-800/80',
 
             // Misc
-            'cursor-pointer overflow-hidden',
-        ],
+            'cursor-pointer overflow-hidden'
+        ]
     },
     decrementbutton: {
         class: [
@@ -554,7 +528,7 @@ export default {
             'rounded-full',
 
             // Colors
-            'text-slate-600 dark:text-surface-50',
+            'text-surface-600 dark:text-white/70',
             'border-0',
             'bg-transparent',
 
@@ -562,18 +536,18 @@ export default {
             'transition-colors duration-200 ease-in-out',
 
             // States
-            'hover:text-slate-700 dark:hover:text-white/80',
-            'hover:bg-slate-100 dark:hover:bg-slate-800/80',
+            'hover:text-surface-700 dark:hover:text-white/80',
+            'hover:bg-surface-100 dark:hover:bg-surface-800/80',
 
             // Misc
-            'cursor-pointer overflow-hidden',
-        ],
+            'cursor-pointer overflow-hidden'
+        ]
     },
     groupcontainer: {
         class: [
             // Flexbox
-            'flex',
-        ],
+            'flex'
+        ]
     },
     group: {
         class: [
@@ -582,7 +556,7 @@ export default {
 
             // Borders
             'border-l',
-            'border-surface-500/40',
+            'border-surface-200',
 
             // Spacing
             'pr-0.5',
@@ -592,8 +566,8 @@ export default {
 
             // Pseudo-Classes
             'first:pl-0',
-            'first:border-l-0',
-        ],
+            'first:border-l-0'
+        ]
     },
     buttonbar: {
         class: [
@@ -604,8 +578,8 @@ export default {
             'py-3 px-0',
 
             // Shape
-            'border-t border-surface-500/40 ',
-        ],
+            'border-t border-surface-200 dark:border-surface-700'
+        ]
     },
     todaybutton: {
         root: {
@@ -617,11 +591,11 @@ export default {
                 'px-4 py-3 leading-none',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Colors
                 'bg-transparent border-transparent',
-                'text-primary-500 dark:text-primary-400',
+                'text-primary',
 
                 // Transitions
                 'transition-colors duration-200 ease-in-out',
@@ -631,9 +605,9 @@ export default {
                 'hover:bg-primary-300/20',
 
                 // Misc
-                'cursor-pointer',
-            ],
-        },
+                'cursor-pointer'
+            ]
+        }
     },
     clearbutton: {
         root: {
@@ -645,11 +619,11 @@ export default {
                 'px-4 py-3 leading-none',
 
                 // Shape
-                'rounded-2xl',
+                'rounded-md',
 
                 // Colors
                 'bg-transparent border-transparent',
-                'text-primary-500 dark:text-primary-400',
+                'text-primary',
 
                 // Transitions
                 'transition-colors duration-200 ease-in-out',
@@ -659,16 +633,14 @@ export default {
                 'hover:bg-primary-300/20',
 
                 // Misc
-                'cursor-pointer',
-            ],
-        },
+                'cursor-pointer'
+            ]
+        }
     },
     transition: {
         enterFromClass: 'opacity-0 scale-y-[0.8]',
-        enterActiveClass:
-            'transition-[transform,opacity] duration-[120ms] ease-[cubic-bezier(0,0,0.2,1)]',
-        leaveActiveClass:
-            'transition-opacity duration-100 ease-linear',
-        leaveToClass: 'opacity-0',
-    },
-}
+        enterActiveClass: 'transition-[transform,opacity] duration-[120ms] ease-[cubic-bezier(0,0,0.2,1)]',
+        leaveActiveClass: 'transition-opacity duration-100 ease-linear',
+        leaveToClass: 'opacity-0'
+    }
+};

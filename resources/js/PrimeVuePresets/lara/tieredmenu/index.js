@@ -2,19 +2,16 @@ export default {
     root: {
         class: [
             // Shape
-            'rounded-2xl',
-            'shadow-2xl',
+            'rounded-md',
 
             // Size
             'min-w-[12rem]',
-            'py-0',
+            'py-1',
 
             // Colors
-            'bg-slate-50 dark:bg-surface-800',
-            'border-0 border-surface-500/40 ',
-            'backdrop-blur-md',
-            'text-base',
-        ],
+            'bg-surface-0 dark:bg-surface-700',
+            'border border-surface-200 dark:border-surface-700'
+        ]
     },
     menu: {
         class: [
@@ -22,34 +19,37 @@ export default {
             'list-none',
             'm-0',
             'p-0',
-            'outline-none',
-        ],
+            'outline-none'
+        ]
     },
     menuitem: {
         class: [
             // Position
-            'relative',
-        ],
+            'relative'
+        ]
     },
     content: ({ context }) => ({
         class: [
             //Shape
-            'rounded-2xl',
+            'rounded-none',
 
-            // Colors
-            'text-slate-700 dark:text-surface-50',
+            //  Colors
             {
-                'bg-white text-slate-700 dark:bg-surface-800 dark:text-surface-50':
-                    context.focused,
+                'text-surface-500 dark:text-white/70': !context.focused && !context.active,
+                'text-surface-500 dark:text-white/70 bg-surface-200 dark:bg-surface-600/90': context.focused && !context.active,
+                'text-primary-highlight-inverse bg-primary-highlight': (context.focused && context.active) || context.active || (!context.focused && context.active)
             },
+
+            // Hover States
+            {
+                'hover:bg-surface-100 dark:hover:bg-surface-600/80': !context.active,
+                'hover:bg-primary-highlight-hover text-primary-highlight-inverse': context.active
+            },
+
             // Transitions
             'transition-shadow',
-            'duration-200',
-
-            // States
-            'hover:text-slate-700 dark:hover:text-white/80',
-            'hover:bg-slate-100 dark:bg-surface-800 dark:hover:bg-slate-700/50',
-        ],
+            'duration-200'
+        ]
     }),
     action: {
         class: [
@@ -60,18 +60,18 @@ export default {
             'items-center',
 
             // Spacing
-            'py-4',
+            'py-3',
             'px-5',
 
             // Color
-            'text-slate-700 dark:text-surface-50',
+            'text-surface-700 dark:text-white/80',
 
             // Misc
             'no-underline',
             'overflow-hidden',
             'cursor-pointer',
-            'select-none',
-        ],
+            'select-none'
+        ]
     },
     icon: {
         class: [
@@ -79,17 +79,17 @@ export default {
             'mr-2',
 
             // Color
-            'text-slate-600 dark:text-surface-50',
-        ],
+            'text-surface-600 dark:text-white/70'
+        ]
     },
     label: {
-        class: ['leading-none'],
+        class: ['leading-none']
     },
     submenuicon: {
         class: [
             // Position
-            'ml-auto',
-        ],
+            'ml-auto'
+        ]
     },
     submenu: {
         class: [
@@ -97,24 +97,23 @@ export default {
             'w-full sm:w-48',
 
             // Spacing
-            'py-0',
+            'py-1',
             'm-0',
             'list-none',
 
             // Shape
-            'shadow-sm',
-            'rounded-2xl',
-            'border border-surface-500/40 ',
+            'shadow-none sm:shadow-md',
+            'border-0',
 
             // Position
             'static sm:absolute',
             'z-10',
 
             // Color
-            'bg-white dark:bg-surface-800',
-        ],
+            'bg-surface-0 dark:bg-surface-700'
+        ]
     },
     separator: {
-        class: 'border-t border-surface-500/40  my-1',
-    },
-}
+        class: 'border-t border-surface-200 dark:border-surface-600 my-1'
+    }
+};
