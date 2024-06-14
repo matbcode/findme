@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { ref, watch, onMounted } from 'vue'
 import { useGlobalStore } from '@/Stores'
 import { useTheme } from '@/Composables/theme'
@@ -102,20 +102,16 @@ onMounted(() => {
     store.projects.fetch()
     // store.updateFeed()
 })
-</script>
+</script> -->
 
 <template>
-    <ConfirmModal />
+    <!-- <ConfirmModal />
     <FormModal />
     <DynamicDialog />
     <CustomToast />
-    <CustomContextMenu />
-    <AuthenticatedLayout
-        v-if="store.user.isLogged"
-        v-model:sidePanel="sidePanelInfo"
-        v-drag="dragHandler"
-    >
-        <template #sidePanel> <SidePanel /> </template>
+    <CustomContextMenu /> -->
+    <!-- <AuthenticatedLayout v-drag="dragHandler"> -->
+    <!-- <template #sidePanel> <SidePanel /> </template>
         <Navbar v-model:sidepanel="sidePanelInfo.isVisible" />
         <Dialog
             v-model:visible="isGlobalSearchVisible"
@@ -129,13 +125,13 @@ onMounted(() => {
                     class="fixed left-1/2 top-[-300px] w-[700px] -translate-x-1/2 transform drop-shadow-extreme"
                 />
             </template>
-        </Dialog>
-        <div class="min-h-[calc(100vh-105px)] px-4">
-            <slot />
-        </div>
-        <Footer />
-    </AuthenticatedLayout>
-    <GuestLayout v-else>
+        </Dialog> -->
+    <div class="min-h-[calc(100vh-105px)] px-4">
         <slot />
-    </GuestLayout>
+    </div>
+    <Footer />
+    <!-- </AuthenticatedLayout> -->
+    <!-- <GuestLayout v-else>
+        <slot />
+    </GuestLayout> -->
 </template>

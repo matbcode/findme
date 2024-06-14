@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as THREE from 'three'
 import { ShaderMaterial, PlaneGeometry, Mesh } from 'three'
@@ -250,4 +250,5 @@ onUnmounted(() => {
 
 <template>
     <div ref="sceneContainer" />
-</template>
+</template> -->
+<template></template>

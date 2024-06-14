@@ -131,7 +131,7 @@ const logoClasses = computed(() => ({
                         >raichi.io</span
                     >
                 </Link>
-                <ol class="flex gap-6 text-lg font-semibold">
+                <!-- <ol class="flex gap-6 text-lg font-semibold">
                     <NavItem :route="route('static.how-it-works')"
                         >How it works
                     </NavItem>
@@ -144,7 +144,7 @@ const logoClasses = computed(() => ({
                     <NavItem :route="route('static.pricing')"
                         >Pricing
                     </NavItem>
-                </ol>
+                </ol> -->
             </div>
             <div>
                 <Link
@@ -170,7 +170,7 @@ const logoClasses = computed(() => ({
     <main class="dark">
         <slot />
     </main>
-    <footer class="block bg-surface-950">
+    <!-- <footer class="block bg-surface-950">
         <div class="container mx-auto max-w-6xl py-12">
             <div class="flex items-start justify-between">
                 <div class="flex gap-10">
@@ -229,5 +229,5 @@ const logoClasses = computed(() => ({
             </div>
             <span></span>
         </div>
-    </footer>
+    </footer> -->
 </template>
