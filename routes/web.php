@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // Authenticated
 Route::middleware(['auth', 'verified'])->group(function () {
 	// Identity
-	Route::post('/identity/create', [IdentityController::class, 'create'])->name('identity.create');
+	Route::post('/identity/store', [IdentityController::class, 'store'])->name('identity.store');
 	Route::get('/identity/{identity}', [IdentityController::class, 'edit'])->name('identity.edit');
 	Route::patch('/identity/{identity}/update', [IdentityController::class, 'update'])->name('identity.update');
 	Route::delete('/identity/{identity}/delete', [IdentityController::class, 'destroy'])->name('identity.delete');
