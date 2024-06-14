@@ -1,11 +1,17 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\IdentityController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // Authenticated
 Route::middleware(['auth', 'verified'])->group(function () {
+	// Identity
+	Route::post('/identity/create', [IdentityController::class, 'create'])->name('identity.create');
+	Route::get('/identity/{identity}', [IdentityController::class, 'edit'])->name('identity.edit');
+	Route::patch('/identity/{identity}/update', [IdentityController::class, 'update'])->name('identity.update');
+	Route::delete('/identity/{identity}/delete', [IdentityController::class, 'destroy'])->name('identity.delete');
 
 	// Dashboard
 	Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invitation;
+use App\Models\Identity;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -16,6 +16,8 @@ class DashboardController extends Controller
      * @return Response
      */
     public function index(Request $request) {
-        return Inertia::render('Dashboard');
+        return Inertia::render('Dashboard', [
+			'identities' => Identity::all()
+		]);
     }
 }
