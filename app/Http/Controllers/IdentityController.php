@@ -57,7 +57,7 @@ class IdentityController extends Controller
 		$identity->middle_name = $request->input('middle_name');
 		$identity->last_name = $request->input('last_name');
 		$identity->nickname = $request->input('nickname');
-		$identity->age = $request->input('age');
+		$identity->date_of_birth = $request->input('date_of_birth');
 		$identity->description = $request->input('description');
 		$identity->save();
 
