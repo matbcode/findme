@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
+use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Image;
+use Intervention\Image\ImageManager;
 use Throwable;
 
 class IdentityController extends Controller
@@ -78,32 +80,15 @@ class IdentityController extends Controller
 	 * @param Identity $identity
 	 * @return RedirectResponse
 	 */
-	public function image(Request $request, Identity $identity): RedirectResponse
+	public function image(Request $request, Identity $identity)
 	{
-		$request->validate([
-			'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096',
-		]);
-
 		// Delete the already existing file if exists
 		if (!empty($identity->image)) {
 			Storage::disk('public')->delete($identity->image);
 		}
 
-		// Handle the uploaded image
-		$file = $request->file('image');
-		$image = Image::fromPath($file->getRealPath());
-
-		// Crop the image (example: 300x300)
-		$image->fit(300, 300);
-
-		// Define the new image path with WebP extension
-		$webpPath = 'identity/' . uniqid() . '.webp';
-
-		// Save the image directly as WebP to the disk
-		Storage::disk('public')->put($webpPath, (string) $image->encode('webp', 90));
-
-		// Update the image path in the identity model
-		$identity->image = $webpPath;
+		// Upload and update Project
+		$identity->image = $request->file('image')->store('identity');
 		$identity->save();
 
 		// Redirect
