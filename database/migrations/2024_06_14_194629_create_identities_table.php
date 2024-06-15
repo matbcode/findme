@@ -20,7 +20,11 @@ return new class extends Migration
 			$table->string('nickname')->nullable();
 			$table->date('date_of_birth')->nullable();
 			$table->mediumText('description')->nullable();
-            $table->timestamps();
+			$table->text('conditions')->nullable();
+			$table->text('allergies')->nullable();
+			$table->string('blood_type')->nullable();
+			$table->string('image')->nullable();
+			$table->timestamps();
         });
     }
 

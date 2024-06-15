@@ -19,16 +19,11 @@ return new class extends Migration
             $table->string('filename')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('image')->nullable();
-			$table->string('locale')->default('en-GB');
-			$table->string('timezone')->default('Europe/London');
 			$table->string('password');
 			$table->string('email')->unique();
 			$table->boolean('email_notifications')->default(0);
 			$table->boolean('2fa')->default(0);
-			$table->boolean('trial_used')->default(0);
-			$table->enum('theme', ['light', 'dark'])->default('dark');
 			$table->timestamp('email_verified_at')->nullable();
-            $table->json('storage')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
