@@ -21,8 +21,8 @@ export const useUploadStore = defineStore('upload', () => {
                 data: {
                     'stencil-component': 'circle-stencil',
                     canvas: {
-                        height: 120,
-                        width: 120,
+                        height: 300,
+                        width: 300,
                     },
                     // image,
                     id,

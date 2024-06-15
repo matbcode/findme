@@ -26,7 +26,7 @@ const props = defineProps({
     },
     rounded: {
         type: Boolean,
-        default: true,
+        default: false,
     },
     showName: {
         type: Boolean,

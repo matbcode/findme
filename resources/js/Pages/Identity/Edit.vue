@@ -30,26 +30,26 @@ const formBody = ref({
             name: 'title',
             label: 'Title',
             type: 'text',
-            value: props.identity.title,
+            value: props.identity.title || 'Ms',
         },
         first_name: {
             name: 'first_name',
             label: 'First name',
             type: 'text',
-            value: props.identity.first_name,
+            value: props.identity.first_name || 'Maria',
             required: true,
         },
         middle_name: {
             name: 'middle_name',
             label: 'Middle name',
             type: 'text',
-            value: props.identity.middle_name,
+            value: props.identity.middle_name || 'Luisa',
         },
         last_name: {
             name: 'last_name',
             label: 'Last name',
             type: 'text',
-            value: props.identity.last_name,
+            value: props.identity.last_name || 'Kowalski',
         },
         nickname: {
             name: 'nickname',
@@ -61,31 +61,70 @@ const formBody = ref({
             name: 'blood_type',
             label: 'Blood type',
             type: 'text',
-            value: props.identity.blood_type,
+            value: props.identity.blood_type || 'O+',
         },
         description: {
             name: 'description',
             label: 'Description',
             type: 'textarea',
-            value: props.identity.description,
+            value:
+                props.identity.description ||
+                'She has dementia and often experiences memory lapses. Maria is missing from her care home in Warsaw since June 10, 2024. She was last seen wearing a blue sweater and black pants. She has a medical bracelet with her name and caregiver contact information. She enjoys crossword puzzles and classical music.',
         },
         allergies: {
             name: 'allergies',
             label: 'Allergies',
             type: 'textarea',
-            value: props.identity.allergies,
+            value:
+                props.identity.allergies ||
+                'Peanuts, shellfish, and penicillin',
         },
         conditions: {
             name: 'conditions',
             label: 'Conditions',
             type: 'textarea',
-            value: props.identity.conditions,
+            value: props.identity.conditions || 'Dementia',
         },
         date_of_birth: {
             name: 'date_of_birth',
             label: 'Date of birth',
             type: 'Date',
-            value: props.identity.date_of_birth,
+            value: props.identity.date_of_birth || '1960-01-01',
+        },
+        caregiver_first_name: {
+            name: 'caregiver_first_name',
+            label: 'Caregiver first name',
+            type: 'text',
+            value: props.identity.caregiver_first_name || 'John',
+        },
+        caregiver_last_name: {
+            name: 'caregiver_last_name',
+            label: 'Caregiver last name',
+            type: 'text',
+            value: props.identity.caregiver_last_name || 'Doe',
+        },
+        caregiver_telephone: {
+            name: 'caregiver_phone',
+            label: 'Caregiver phone',
+            type: 'text',
+            value:
+                props.identity.caregiver_telephone ||
+                '+48 123 456 789',
+        },
+        caregiver_email: {
+            name: 'caregiver_email',
+            label: 'Caregiver email',
+            type: 'email',
+            value:
+                props.identity.caregiver_email || 'Johndoe@test.uk',
+        },
+        caregiver_address: {
+            name: 'caregiver_address',
+            label: 'Caregiver address',
+            type: 'text',
+            value:
+                props.identity.caregiver_address ||
+                'Baker Street 221B, London, UK',
         },
     },
 })
@@ -120,7 +159,6 @@ const onMarkAsMissing = () => {
                         icon="fa-solid fa-person-circle-question"
                         severity="warning"
                         label="Mark as missing"
-                        @click="onDelete"
                     />
                     <CustomButton
                         icon="fa-solid fa-trash"
@@ -166,7 +204,7 @@ const onMarkAsMissing = () => {
                 Please fill in the details below
             </h1>
             <Avatar
-                size="120px"
+                size="300px"
                 :user="identity"
                 editable
                 @edit="onEditAvatar"
