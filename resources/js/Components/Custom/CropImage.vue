@@ -61,7 +61,8 @@ const uploadImage = () => {
 
                 axios
                     .post(
-                        props.data.route || route('profile.image'),
+                        props.data.route ||
+                            route('identity.image', identity),
                         {
                             ...props.data.axiosForm,
                             file,
@@ -91,19 +92,16 @@ const uploadImage = () => {
                 })
 
                 form[props.data.formKey || 'image'] = file
-                form.post(
-                    props.data.route || route('profile.image'),
-                    {
-                        preserveScroll: false,
-                        preserveState: false,
-                        onSuccess: () => {
-                            console.log('Success')
-                        },
-                        onError: () => {
-                            console.log('Error')
-                        },
+                form.post(route('identity.image', props.data.id), {
+                    preserveScroll: false,
+                    preserveState: false,
+                    onSuccess: () => {
+                        console.log('Success')
                     },
-                )
+                    onError: () => {
+                        console.log('Error')
+                    },
+                })
                 emit('imageCreated', canvas.toDataURL('image/jpeg'))
                 closeDialog()
             }, 'image/jpeg')

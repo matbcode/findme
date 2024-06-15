@@ -55,14 +55,14 @@
 // )
 </script>
 <template>
-    <div class="h-full min-h-screen w-[100vw-4x] sm:flex">
+    <div class="h-full min-h-screen w-[100vw-4x] p-0 sm:flex">
         <!-- <div class="flex-shrink-0" :style="styles">
             <div class="bottom-0 top-0 sm:fixed">
                 <slot name="sidePanel" />
             </div>
         </div> -->
         <div
-            class="z-10 flex min-h-[100vh] w-full flex-col justify-between overflow-clip bg-surface-50 shadow-2xl outline outline-1 outline-surface-100 dark:bg-gradient-to-b dark:from-surface-950 dark:to-surface-950 dark:outline-surface-800"
+            class="z-10 flex min-h-[100vh] w-full flex-col justify-between overflow-clip bg-surface-50 p-4 shadow-2xl outline outline-1 outline-surface-100 dark:bg-gradient-to-b dark:from-surface-950 dark:to-surface-950 dark:outline-surface-800"
         >
             <main>
                 <slot />

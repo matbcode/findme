@@ -17,7 +17,7 @@ import { useModalsStore } from '@/Stores/modals'
 // import { useCampaignsStore } from '@/Stores/campaigns'
 // import { useUrlStore } from '@/Stores/url'
 // import { useApiStore } from '@/Stores/api'
-// import { useUploadStore } from '@/Stores/upload'
+import { useUploadStore } from '@/Stores/upload'
 // import { usePostsStore } from '@/Stores/posts'
 // import { useRolesStore } from '@/Stores/roles'
 // import { useFilesStore } from '@/Stores/files'
@@ -44,7 +44,7 @@ export const useGlobalStore = defineStore('global', () => {
     // const campaigns = useCampaignsStore()
     // const url = useUrlStore()
     // const api = useApiStore()
-    // const upload = useUploadStore()
+    const upload = useUploadStore()
     // const posts = usePostsStore()
     // const roles = useRolesStore()
     // const files = useFilesStore()
@@ -68,7 +68,7 @@ export const useGlobalStore = defineStore('global', () => {
         // campaigns,
         // url,
         // api,
-        // upload,
+        upload,
         // posts,
         // roles,
         // files,

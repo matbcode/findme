@@ -17,6 +17,7 @@ import VueSanitize from 'vue-sanitize-directive'
 import { CircleStencil, Cropper } from 'vue-advanced-cropper'
 import { GesturePlugin } from '@vueuse/gesture'
 import { dragDirective } from '@vueuse/gesture'
+// import VueGoogleMaps from '@fawmi/vue-google-maps'
 import 'vue-advanced-cropper/dist/style.css'
 
 import 'primeicons/primeicons.css'
@@ -117,6 +118,11 @@ createInertiaApp({
                 .use(pinia)
                 .use(GesturePlugin)
                 .use(VueSanitize)
+                // .use(VueGoogleMaps, {
+                //     load: {
+                //         key: 'YOUR_API_KEY_COMES_HERE',
+                //     },
+                // })
                 .component('font-awesome-icon', FontAwesomeIcon)
                 .component('Cropper', Cropper)
                 .component('CircleStencil', CircleStencil)

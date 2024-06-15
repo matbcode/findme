@@ -1,15 +1,18 @@
 <script setup>
 import { ref } from 'vue'
 import { router } from '@inertiajs/vue3'
+import { useGlobalStore } from '@/Stores'
 
 import QRCodeVue3 from 'qrcode-vue3'
-import TextInput from '@/Components/Inputs/TextInput.vue'
 import FormWrapper from '@/Components/PageWrappers/FormWrapper.vue'
 import CustomCard from '@/Components/Custom/CustomCard.vue'
 import CustomButton from '@/Components/Custom/CustomButton.vue'
+import WideWrapper from '@/Components/PageWrappers/WideWrapper.vue'
+import Avatar from '@/Components/Custom/Avatar.vue'
 
 import MainLayout from '@/Layouts/MainLayout.vue'
-import CenteredLayout from '@/Layouts/CenteredLayout.vue'
+
+const store = useGlobalStore()
 
 defineOptions({ layout: MainLayout })
 
@@ -54,11 +57,29 @@ const formBody = ref({
             type: 'text',
             value: props.identity.nickname,
         },
+        blood_type: {
+            name: 'blood_type',
+            label: 'Blood type',
+            type: 'text',
+            value: props.identity.blood_type,
+        },
         description: {
             name: 'description',
             label: 'Description',
             type: 'textarea',
             value: props.identity.description,
+        },
+        allergies: {
+            name: 'allergies',
+            label: 'Allergies',
+            type: 'textarea',
+            value: props.identity.allergies,
+        },
+        conditions: {
+            name: 'conditions',
+            label: 'Conditions',
+            type: 'textarea',
+            value: props.identity.conditions,
         },
         date_of_birth: {
             name: 'date_of_birth',
@@ -72,42 +93,79 @@ const formBody = ref({
 const onDelete = () => {
     router.delete(route('identity.delete', props.identity.id))
 }
+
+const onEditAvatar = () => {
+    store.upload.showAvatarUploadModal(props.identity.id)
+}
 </script>
 <template>
-    <CenteredLayout>
-        <CustomCard>
-            <div class="flex w-full flex-col gap-12">
-                <div class="flex justify-between">
-                    <CustomButton
-                        label="Back"
-                        icon="fa-solid fa-arrow-left"
-                        @click="router.visit(route('dashboard'))"
-                    />
-                    <CustomButton
-                        icon="fa-solid fa-trash"
-                        severity="danger"
-                        @click="onDelete"
-                    />
-                </div>
-                <h1 class="text-2xl font-semibold text-gray-800">
-                    Please fill in the details below
-                </h1>
-                <div class="flex w-full justify-center">
-                    <QRCodeVue3
-                        :width="500"
-                        :height="500"
-                        :typeNumber="40"
-                        :qrOptions="{ errorCorrectionLevel: 'H' }"
-                        :dotsOptions="{
-                            colorDark: '#000000',
-                            colorLight: '#ffffff',
-                        }"
-                        :value="`https://imlost.co.uk/id/${identity.id}`"
-                    />
-                </div>
-
-                <FormWrapper :formBody class="w-full" />
+    <div class="flex w-full max-w-screen-xl flex-col gap-12">
+        <div class="flex justify-between">
+            <CustomButton
+                label="Back"
+                icon="fa-solid fa-arrow-left"
+                @click="router.visit(route('dashboard'))"
+            />
+            <div class="flex gap-2">
+                <CustomButton
+                    icon="fa-solid fa-person-circle-question"
+                    severity="warning"
+                    label="Mark as missing"
+                    @click="onDelete"
+                />
+                <CustomButton
+                    icon="fa-solid fa-trash"
+                    severity="danger"
+                    @click="onDelete"
+                />
             </div>
-        </CustomCard>
-    </CenteredLayout>
+        </div>
+
+        <div
+            class="flex w-full flex-col items-center justify-center gap-8"
+        >
+            <QRCodeVue3
+                :width="500"
+                :height="500"
+                :typeNumber="40"
+                :qrOptions="{ errorCorrectionLevel: 'H' }"
+                :dotsOptions="{
+                    colorDark: '#000000',
+                    colorLight: '#ffffff',
+                }"
+                :value="`https://imlost.co.uk/id/${identity.id}`"
+            />
+            <!-- <GMapMap
+                        :center="center"
+                        :zoom="7"
+                        map-type-id="terrain"
+                        style="width: 500px; height: 300px"
+                    >
+                        <GMapCluster>
+                            <GMapMarker
+                                :key="index"
+                                v-for="(m, index) in markers"
+                                :position="m.position"
+                                :clickable="true"
+                                :draggable="true"
+                                @click="center = m.position"
+                            />
+                        </GMapCluster>
+                    </GMapMap> -->
+        </div>
+        <h1 class="text-2xl font-semibold text-gray-800">
+            Please fill in the details below
+        </h1>
+        <Avatar
+            size="120px"
+            :user="identity"
+            editable
+            @edit="onEditAvatar"
+        />
+        <FormWrapper
+            :formBody
+            class="h-full w-full"
+            showButtons="always"
+        />
+    </div>
 </template>

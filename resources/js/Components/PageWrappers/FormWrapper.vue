@@ -290,8 +290,7 @@ const editedFieldClasses = (field) => {
                 <slot name="append" :form="form" />
             </form>
             <div
-                v-if="buttonsVisible"
-                class="mt-8 flex h-full w-full items-end justify-end gap-4 @container"
+                class="mt-8 flex h-full w-full items-end justify-end gap-4"
             >
                 <CustomButton
                     v-bind="cancelButtonProps"
