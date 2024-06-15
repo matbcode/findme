@@ -29,6 +29,6 @@ onMounted(() => {
 </script>
 <template>
     <WideWrapper>
-        <div class="flex w-full flex-col gap-12">HI!</div>
+        <div class="flex w-full flex-col gap-12">{{ identity }}</div>
     </WideWrapper>
 </template>

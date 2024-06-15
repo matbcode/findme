@@ -142,7 +142,7 @@ const onMarkAsMissing = () => {
                         colorDark: '#000000',
                         colorLight: '#ffffff',
                     }"
-                    :value="`https://imlost.co.uk/id/${identity.id}`"
+                    :value="`https://findme.neonbyte.co.uk/id/${identity.id}`"
                 />
                 <!-- <GMapMap
                         :center="center"
