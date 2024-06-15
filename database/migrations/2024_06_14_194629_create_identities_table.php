@@ -24,6 +24,11 @@ return new class extends Migration
 			$table->text('allergies')->nullable();
 			$table->string('blood_type')->nullable();
 			$table->string('image')->nullable();
+			$table->string('caregiver_first_name')->nullable();
+			$table->string('caregiver_last_name')->nullable();
+			$table->string('caregiver_telephone')->nullable();
+			$table->string('caregiver_email')->nullable();
+			$table->text('caregiver_address')->nullable();
 			$table->timestamps();
         });
     }

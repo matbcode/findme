@@ -63,6 +63,11 @@ class IdentityController extends Controller
 		$identity->conditions = $request->input('conditions');
 		$identity->allergies = $request->input('allergies');
 		$identity->blood_type = $request->input('blood_type');
+		$identity->caregiver_first_name = $request->input('caregiver_first_name');
+		$identity->caregiver_last_name = $request->input('caregiver_last_name');
+		$identity->caregiver_telephone = $request->input('caregiver_telephone');
+		$identity->caregiver_email = $request->input('caregiver_email');
+		$identity->caregiver_address = $request->input('caregiver_address');
 		$identity->save();
 
 		return redirect()->back();
