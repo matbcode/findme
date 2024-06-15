@@ -11,6 +11,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 	Route::post('/identity/store', [IdentityController::class, 'store'])->name('identity.store');
 	Route::get('/identity/{identity}', [IdentityController::class, 'edit'])->name('identity.edit');
 	Route::patch('/identity/{identity}/update', [IdentityController::class, 'update'])->name('identity.update');
+	Route::post('/identity/{identity}/image', [IdentityController::class, 'image'])->name('identity.image');
 	Route::delete('/identity/{identity}/delete', [IdentityController::class, 'destroy'])->name('identity.delete');
 
 	// Dashboard
