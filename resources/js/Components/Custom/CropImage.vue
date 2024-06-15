@@ -127,7 +127,7 @@ const onSetAspectRatio = (aspectRatio) => {
 </script>
 <template>
     <div
-        class="flex w-[512px] flex-col items-center justify-center p-8"
+        class="z-50 flex w-full flex-col items-center justify-center p-8"
     >
         <FileUpload
             v-if="!image"
