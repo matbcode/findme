@@ -50,9 +50,9 @@ const props = defineProps({
 
 const classes = computed(() => {
     return {
-        'relative w-full flex flex-col gap-8': true,
+        'w-full flex flex-col gap-8': true,
         // 'max-w-[2560px]': isExpanded.value,
-        'max-w-6xl': true,
+        'max-w-screen-xl': true,
     }
 })
 
@@ -61,15 +61,21 @@ const icon = computed(() => {
 })
 </script>
 <template>
-    <div
+    <!-- <div
         id="wrapper-content"
         class="flex h-full w-full justify-center pb-8"
     >
         <div :class="classes">
-            <FormWrapper v-bind="props" />
             <div class="flex flex-col gap-8">
                 <slot />
             </div>
+        </div>
+    </div> -->
+    <div class="flex h-full w-full justify-center pb-8">
+        <div
+            class="flex h-full w-full max-w-screen-xl flex-col gap-8"
+        >
+            <slot />
         </div>
     </div>
 </template>

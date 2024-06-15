@@ -99,43 +99,44 @@ const onEditAvatar = () => {
 }
 </script>
 <template>
-    <div class="flex w-full max-w-screen-xl flex-col gap-12">
-        <div class="flex justify-between">
-            <CustomButton
-                label="Back"
-                icon="fa-solid fa-arrow-left"
-                @click="router.visit(route('dashboard'))"
-            />
-            <div class="flex gap-2">
+    <WideWrapper>
+        <div class="flex w-full flex-col gap-12">
+            <div class="flex justify-between">
                 <CustomButton
-                    icon="fa-solid fa-person-circle-question"
-                    severity="warning"
-                    label="Mark as missing"
-                    @click="onDelete"
+                    label="Back"
+                    icon="fa-solid fa-arrow-left"
+                    @click="router.visit(route('dashboard'))"
                 />
-                <CustomButton
-                    icon="fa-solid fa-trash"
-                    severity="danger"
-                    @click="onDelete"
-                />
+                <div class="flex gap-2">
+                    <CustomButton
+                        icon="fa-solid fa-person-circle-question"
+                        severity="warning"
+                        label="Mark as missing"
+                        @click="onDelete"
+                    />
+                    <CustomButton
+                        icon="fa-solid fa-trash"
+                        severity="danger"
+                        @click="onDelete"
+                    />
+                </div>
             </div>
-        </div>
 
-        <div
-            class="flex w-full flex-col items-center justify-center gap-8"
-        >
-            <QRCodeVue3
-                :width="500"
-                :height="500"
-                :typeNumber="40"
-                :qrOptions="{ errorCorrectionLevel: 'H' }"
-                :dotsOptions="{
-                    colorDark: '#000000',
-                    colorLight: '#ffffff',
-                }"
-                :value="`https://imlost.co.uk/id/${identity.id}`"
-            />
-            <!-- <GMapMap
+            <div
+                class="flex w-full flex-col items-center justify-center gap-8"
+            >
+                <QRCodeVue3
+                    :width="500"
+                    :height="500"
+                    :typeNumber="40"
+                    :qrOptions="{ errorCorrectionLevel: 'H' }"
+                    :dotsOptions="{
+                        colorDark: '#000000',
+                        colorLight: '#ffffff',
+                    }"
+                    :value="`https://imlost.co.uk/id/${identity.id}`"
+                />
+                <!-- <GMapMap
                         :center="center"
                         :zoom="7"
                         map-type-id="terrain"
@@ -152,20 +153,17 @@ const onEditAvatar = () => {
                             />
                         </GMapCluster>
                     </GMapMap> -->
+            </div>
+            <h1 class="text-2xl font-semibold text-gray-800">
+                Please fill in the details below
+            </h1>
+            <Avatar
+                size="120px"
+                :user="identity"
+                editable
+                @edit="onEditAvatar"
+            />
+            <FormWrapper :formBody class="h-full w-full" />
         </div>
-        <h1 class="text-2xl font-semibold text-gray-800">
-            Please fill in the details below
-        </h1>
-        <Avatar
-            size="120px"
-            :user="identity"
-            editable
-            @edit="onEditAvatar"
-        />
-        <FormWrapper
-            :formBody
-            class="h-full w-full"
-            showButtons="always"
-        />
-    </div>
+    </WideWrapper>
 </template>
