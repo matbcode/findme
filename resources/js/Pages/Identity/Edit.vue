@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { router } from '@inertiajs/vue3'
+import { router, useForm } from '@inertiajs/vue3'
 import { useGlobalStore } from '@/Stores'
 
 import QRCodeVue3 from 'qrcode-vue3'
@@ -96,6 +96,14 @@ const onDelete = () => {
 
 const onEditAvatar = () => {
     store.upload.showAvatarUploadModal(props.identity.id)
+}
+
+const onMarkAsMissing = () => {
+    const form = useForm({
+        ...props.identity,
+    })
+
+    form.post(route('identity.update', props.identity.id))
 }
 </script>
 <template>

@@ -34,7 +34,7 @@ const onShowIdentity = (identity) => {
         <div class="flex flex-col justify-center gap-8">
             <h1 class="flex justify-between">
                 <span class="text-2xl font-semibold text-gray-800">
-                    Dashboard
+                    Dashboard Test
                 </span>
                 <CustomButton
                     label="Create new identity"
