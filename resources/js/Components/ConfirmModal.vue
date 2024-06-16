@@ -66,7 +66,6 @@ const confirmText = ref('')
                         confirmText !== confirmModalInfo.confirmText
                     "
                     class="w-full sm:w-auto"
-                    icon="pi pi-check"
                     autofocus
                     @click="confirmModalInfo.onConfirm"
                 />

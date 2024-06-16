@@ -11,8 +11,8 @@ import CustomButton from '@/Components/Custom/CustomButton.vue'
 import CustomCard from '@/Components/Custom/CustomCard.vue'
 import CenteredLayout from '@/Layouts/CenteredLayout.vue'
 
-import MainLayout from '@/Layouts/MainLayout.vue'
-defineOptions({ layout: MainLayout })
+// import MainLayout from '@/Layouts/MainLayout.vue'
+// defineOptions({ layout: MainLayout })
 
 const form = useForm({
     first_name: '',
@@ -72,8 +72,6 @@ const onMicrosoftLogin = () => {
                     label="Sign in with Google"
                     icon="fa-brands fa-google"
                     class="w-full"
-                    plain
-                    raised
                     @click="onGoogleLogin"
                 />
                 <!-- <CustomButton
@@ -87,8 +85,6 @@ const onMicrosoftLogin = () => {
                 <CustomButton
                     type="submit"
                     icon="fa-brands fa-microsoft"
-                    plain
-                    raised
                     class="h-[45px] w-[50px]"
                     @click="onMicrosoftLogin"
                 />
@@ -200,7 +196,7 @@ const onMicrosoftLogin = () => {
             </div>
 
             <div
-                class="flex items-center justify-between gap-4 text-surface-300"
+                class="flex items-center justify-between gap-4 text-orange-700"
             >
                 <Link
                     :href="route('login')"
@@ -212,7 +208,7 @@ const onMicrosoftLogin = () => {
         </CustomCard>
 
         <div
-            class="absolute bottom-4 flex items-center justify-center gap-4 text-xs text-surface-300/70"
+            class="absolute bottom-4 flex items-center justify-center gap-4 text-xs text-orange-700"
         >
             <Link
                 href="/terms-and-conditions"

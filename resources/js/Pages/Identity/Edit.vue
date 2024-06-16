@@ -9,6 +9,7 @@ import CustomCard from '@/Components/Custom/CustomCard.vue'
 import CustomButton from '@/Components/Custom/CustomButton.vue'
 import WideWrapper from '@/Components/PageWrappers/WideWrapper.vue'
 import Avatar from '@/Components/Custom/Avatar.vue'
+import Logo from '@/Components/Navbar/Logo.vue'
 
 import MainLayout from '@/Layouts/MainLayout.vue'
 
@@ -130,11 +131,28 @@ const formBody = ref({
 })
 
 const onDelete = () => {
-    router.delete(route('identity.delete', props.identity.id))
+    // router.delete(route('identity.delete', props.identity.id))
+    store.modals.showConfirm({
+        title: 'Delete identity',
+        message: 'Are you sure you want to delete this identity?',
+        confirmButtonProps: {
+            label: 'Delete',
+            severity: 'danger',
+            icon: 'fa-solid fa-trash',
+        },
+        onConfirm: () => {
+            // store.modals.closeDialog()
+            router.delete(route('identity.delete', props.identity.id))
+        },
+    })
 }
 
 const onEditAvatar = () => {
     store.upload.showAvatarUploadModal(props.identity.id)
+}
+
+const onShowIdentity = (identity) => {
+    router.visit(route('identity.show', { identity }))
 }
 
 const onMarkAsMissing = () => {
@@ -149,21 +167,15 @@ const onMarkAsMissing = () => {
     <WideWrapper>
         <div class="flex w-full flex-col gap-12">
             <div class="flex justify-between">
-                <CustomButton
-                    label="Back"
-                    icon="fa-solid fa-arrow-left"
-                    @click="router.visit(route('dashboard'))"
-                />
+                <Logo />
                 <div class="flex gap-2">
                     <CustomButton
-                        icon="fa-solid fa-person-circle-question"
-                        severity="warning"
-                        label="Mark as missing"
+                        icon="fa-solid fa-eye"
+                        @click="onShowIdentity(identity)"
                     />
                     <CustomButton
-                        icon="fa-solid fa-trash"
-                        severity="danger"
-                        @click="onDelete"
+                        icon="fa-solid fa-qrcode"
+                        @click="onShowIdentity(identity)"
                     />
                 </div>
             </div>
@@ -177,11 +189,12 @@ const onMarkAsMissing = () => {
                     :typeNumber="40"
                     :qrOptions="{ errorCorrectionLevel: 'H' }"
                     :dotsOptions="{
-                        colorDark: '#000000',
-                        colorLight: '#ffffff',
+                        colorDark: '#FF681F',
+                        colorLight: '#FF681F',
                     }"
                     :value="`https://findme.neonbyte.co.uk/id/${identity.id}`"
                 />
+
                 <!-- <GMapMap
                         :center="center"
                         :zoom="7"
@@ -200,9 +213,9 @@ const onMarkAsMissing = () => {
                         </GMapCluster>
                     </GMapMap> -->
             </div>
-            <h1 class="text-2xl font-semibold text-gray-800">
+            <!-- <h1 class="text-2xl font-semibold text-gray-800">
                 Please fill in the details below
-            </h1>
+            </h1> -->
             <Avatar
                 size="300px"
                 :user="identity"
@@ -210,6 +223,31 @@ const onMarkAsMissing = () => {
                 @edit="onEditAvatar"
             />
             <FormWrapper :formBody class="h-full w-full" />
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1190.0974839004116!2d14.642374007399441!3d53.37556094108917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4700a7075be39cff%3A0xf80a242ae45b546d!2sGreen%20Planet!5e0!3m2!1spl!2spl!4v1718543722224!5m2!1spl!2spl"
+                width="100%"
+                height="450"
+                style="border: 0"
+                class="rounded-2xl shadow-2xl"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="flex w-full gap-2">
+                <CustomButton
+                    label="Set missing"
+                    icon="fa-solid fa-person-circle-question"
+                    severity="warning"
+                    class="w-full"
+                />
+                <CustomButton
+                    label="Delete"
+                    icon="fa-solid fa-trash"
+                    severity="danger"
+                    class="w-full"
+                    @click="onDelete"
+                />
+            </div>
         </div>
     </WideWrapper>
 </template>

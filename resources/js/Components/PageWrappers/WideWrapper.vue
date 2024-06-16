@@ -71,7 +71,7 @@ const icon = computed(() => {
             </div>
         </div>
     </div> -->
-    <div class="flex h-full w-full justify-center pb-8">
+    <div class="flex h-full w-full justify-center">
         <div
             class="flex h-full w-full max-w-screen-xl flex-col gap-8"
         >

@@ -3,7 +3,7 @@ import { Link, usePage } from '@inertiajs/vue3'
 </script>
 <template>
     <footer
-        class="mx-auto h-full w-full border-t border-surface-100 text-xs font-light text-surface-300 dark:border-surface-800 dark:text-surface-300"
+        class="mx-auto h-full w-full border-t border-surface-100 bg-white text-xs font-light text-surface-300 dark:border-surface-800 dark:text-surface-300"
     >
         <div
             class="mx-auto flex w-full items-center justify-between px-4 py-3"

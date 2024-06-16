@@ -97,7 +97,7 @@ export const useModalsStore = defineStore('modals', () => {
             },
             confirmButtonProps: {
                 label: 'Confirm',
-                icon: 'pi pi-check',
+                // icon: 'pi pi-check',
             },
             onUpdateVisibility: (value) =>
                 (isConfirmOpen.value = value),

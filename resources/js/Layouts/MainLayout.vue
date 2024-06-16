@@ -8,6 +8,7 @@ import ConfirmModal from '@/Components/ConfirmModal.vue'
 import FormModal from '@/Components/FormModal.vue'
 import CustomToast from '@/ComponentsNew/Global/Toast/CustomToast.vue'
 import CustomContextMenu from '@/ComponentsNew/Global/ContextMenu/CustomContextMenu.vue'
+import Footer from '@/Components/Footers/Footer.vue'
 </script>
 
 <template>
@@ -21,4 +22,5 @@ import CustomContextMenu from '@/ComponentsNew/Global/ContextMenu/CustomContextM
             <slot />
         </div>
     </AuthenticatedLayout>
+    <Footer />
 </template>
