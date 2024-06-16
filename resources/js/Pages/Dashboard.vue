@@ -37,8 +37,8 @@ const onShowIdentity = (identity) => {
                 <Logo />
                 <div class="flex gap-2">
                     <CustomButton
-                        label="Add identity"
                         icon="fa-solid fa-user-plus"
+                        severity="success"
                         @click="onCreateIdentity"
                     />
                     <!-- <CustomButton
@@ -70,7 +70,7 @@ const onShowIdentity = (identity) => {
                         />
                         <CustomButton
                             icon="fa-solid fa-user-pen"
-                            severity="warning"
+                            severity="success"
                             @click="onEditIdentity(identity)"
                         />
                     </div>

@@ -34,34 +34,8 @@ onMounted(() => {
 </script>
 <template>
     <div class="flex justify-center gap-8 bg-white p-2">
-        <div class="flex max-w-[600px] flex-col gap-4">
+        <div class="flex max-w-[800px] flex-col gap-4">
             <Logo />
-
-            <span class="text-3xl font-semibold text-orange-600">
-                MISSING PERSON
-            </span>
-            <span class="font-semibold text-orange-600">
-                This person was mark as missing. Please allow your
-                device location to help us find this person and
-                contact the authorities or caregiver who reported this
-                person as missing.
-            </span>
-
-            <div class="flex gap-4">
-                <CustomButton
-                    label="Share location"
-                    icon="fa-solid fa-location-crosshairs"
-                    class="w-full"
-                />
-
-                <CustomButton
-                    label="Call"
-                    icon="fa-solid fa-phone"
-                    class="w-full"
-                    severity="success"
-                    raised
-                />
-            </div>
 
             <div>
                 <div class="flex w-full items-center justify-center">
@@ -75,7 +49,44 @@ onMounted(() => {
                         />
                         <!-- </div> -->
                         <CustomCard>
-                            Person details
+                            <div class="flex flex-col gap-4">
+                                <span
+                                    class="text-center text-3xl font-semibold text-red-600"
+                                >
+                                    MISSING PERSON
+                                </span>
+                                <span
+                                    class="font-semibold text-red-600"
+                                >
+                                    This person was mark as missing.
+                                    Please allow your device location
+                                    to help us find this person and
+                                    contact the authorities or
+                                    caregiver who reported this person
+                                    as missing.
+                                </span>
+
+                                <div class="flex gap-4">
+                                    <CustomButton
+                                        label="Share location"
+                                        icon="fa-solid fa-location-crosshairs"
+                                        class="w-full"
+                                    />
+
+                                    <CustomButton
+                                        label="Call"
+                                        icon="fa-solid fa-phone"
+                                        class="w-full"
+                                        severity="success"
+                                        raised
+                                    />
+                                </div>
+                            </div>
+                        </CustomCard>
+                        <CustomCard>
+                            <span class="text-lg">
+                                Person details
+                            </span>
                             <div class="flex w-full flex-col">
                                 <div class="text-sm font-light">
                                     Full name:
@@ -156,7 +167,9 @@ onMounted(() => {
                             ></div>
                         </CustomCard>
                         <CustomCard>
-                            Caregiver details
+                            <span class="text-lg">
+                                Caregiver details
+                            </span>
                             <div
                                 v-if="
                                     identity.caregiver_first_name ||
