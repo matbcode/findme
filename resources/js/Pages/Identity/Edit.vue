@@ -192,7 +192,7 @@ const onMarkAsMissing = () => {
                         colorDark: '#FF681F',
                         colorLight: '#FF681F',
                     }"
-                    :value="`https://findme.neonbyte.co.uk/id/${identity.id}`"
+                    :value="`https://locately.uk/id/${identity.id}`"
                 />
 
                 <!-- <GMapMap
