@@ -17,8 +17,8 @@ const props = defineProps({
         >
             <div class="h-8">
                 <svg
-                    width="100%"
-                    height="100%"
+                    width="172px"
+                    height="30px"
                     viewBox="0 0 370.1851851851851 64.81482012485475"
                 >
                     <defs id="SvgjsDefs1011"></defs>
