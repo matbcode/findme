@@ -1,24 +1,20 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { router } from '@inertiajs/vue3'
 
-import Message from 'primevue/message'
-
-import CustomCard from '@/Components/Custom/CustomCard.vue'
 import CustomButton from '@/Components/Custom/CustomButton.vue'
-import WideWrapper from '@/Components/PageWrappers/WideWrapper.vue'
-import Avatar from '@/Components/Custom/Avatar.vue'
 import Logo from '@/Components/Navbar/Logo.vue'
-
-// import MainLayout from '@/Layouts/MainLayout.vue'
-
-// defineOptions({ layout: MainLayout })
+import CaregiverInfo from './CaregiverInfo.vue'
 
 const props = defineProps({
     identity: {
         type: Object,
     },
 })
+
+const background = ref(null)
+const avatar = ref(null)
+
+const isMissingInfoVisible = ref(false)
 
 onMounted(() => {
     console.log('Identity:', props.identity)
@@ -30,75 +26,146 @@ onMounted(() => {
             console.log('Geolocation is not available')
         },
     )
+
+    background.value.style.transform = `translateY(-${0 * 0.25}px)`
+
+    document.addEventListener('scroll', (e) => {
+        background.value.style.transform = `translateY(-${window.scrollY * 0.25}px)`
+        avatar.value.style.transform = `translateY(${window.scrollY * 0.1}px)`
+    })
 })
 </script>
 <template>
-    <div class="flex justify-center gap-8 bg-white p-2">
-        <div class="flex max-w-[800px] flex-col gap-4">
-            <Logo />
+    <img
+        ref="background"
+        id="thumbnail"
+        src="https://images.unsplash.com/photo-1559762717-99c81ac85459?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="background fixed w-screen scale-[1.2]"
+    />
+    <div class="flex flex-col items-center justify-center gap-8">
+        <div
+            v-if="isMissingInfoVisible"
+            class="sticky top-0 z-20 flex flex-col gap-4 bg-red-600 p-4 text-white shadow-2xl"
+        >
+            <div class="absolute right-2 top-2">
+                <CustomButton
+                    icon="fa-solid fa-times"
+                    rounded
+                    outlined
+                    @click="isMissingInfoVisible = false"
+                />
+            </div>
+            <span class="text-center text-xl font-semibold">
+                MISSING PERSON
+            </span>
+            <span>
+                This person was mark as missing. Please allow your
+                device location to help us find this person and
+                contact the authorities or caregiver who reported this
+                person as missing.
+            </span>
 
-            <div>
-                <div class="flex w-full items-center justify-center">
-                    <div class="flex w-full flex-col gap-4">
-                        <!-- Person details -->
-                        <!-- <div class="flex w-full justify-center"> -->
-                        <!-- <Avatar size="300px" :user="identity" /> -->
-                        <img
-                            :src="'/storage/' + identity.image"
-                            class="rounded-xl object-cover shadow-sm"
-                        />
-                        <!-- </div> -->
-                        <CustomCard>
-                            <div class="flex flex-col gap-4">
-                                <span
-                                    class="text-center text-3xl font-semibold text-red-600"
-                                >
-                                    MISSING PERSON
-                                </span>
-                                <span
-                                    class="font-semibold text-red-600"
-                                >
-                                    This person was mark as missing.
-                                    Please allow your device location
-                                    to help us find this person and
-                                    contact the authorities or
-                                    caregiver who reported this person
-                                    as missing.
-                                </span>
+            <div class="flex gap-4">
+                <CustomButton
+                    label="Share location"
+                    icon="fa-solid fa-location-crosshairs"
+                    class="w-full"
+                    rounded
+                    outlined
+                />
 
-                                <div class="flex gap-4">
-                                    <CustomButton
-                                        label="Share location"
-                                        icon="fa-solid fa-location-crosshairs"
-                                        class="w-full"
-                                    />
+                <CustomButton
+                    label="Call"
+                    icon="fa-solid fa-phone"
+                    class="w-full"
+                    rounded
+                    outlined
+                />
+            </div>
+        </div>
 
-                                    <CustomButton
-                                        label="Call"
-                                        icon="fa-solid fa-phone"
-                                        class="w-full"
-                                        severity="success"
-                                        raised
-                                    />
-                                </div>
+        <div class="flex max-w-screen-lg flex-col gap-4">
+            <!-- <div class="m-4">
+                <Logo />
+            </div> -->
+
+            <div class="relative mt-[30vh] lg:mb-8">
+                <div
+                    class="border-1 min-h-[70vh] rounded-2xl border border-2 border-white/50 bg-white/90 p-4 shadow-xl backdrop-blur-3xl"
+                >
+                    <div
+                        class="flex w-full items-center justify-center"
+                    >
+                        <div class="flex w-full flex-col gap-8 pt-32">
+                            <!-- Person details -->
+                            <!-- <div class="flex w-full justify-center"> -->
+                            <div
+                                class="absolute -top-[140px] left-1/2 h-[250px] w-[250px] -translate-x-1/2 overflow-hidden rounded-full border-4 border-surface-50 bg-surface-50 shadow-2xl"
+                            >
+                                <img
+                                    ref="avatar"
+                                    :src="
+                                        `/storage/` + identity.image
+                                    "
+                                />
                             </div>
-                        </CustomCard>
-                        <CustomCard>
-                            <span class="text-lg">
+                            <!-- 
+                            <Avatar
+                                size="250px"
+                                :user="identity"
+                                class="absolute -top-[140px] hidden rounded-full border-4 border-surface-50 bg-surface-50 shadow-2xl sm:block"
+                                rounded
+                            /> -->
+
+                            <!-- </div> -->
+
+                            <!-- <span class="text-lg">
                                 Person details
-                            </span>
+                            </span> -->
                             <div class="flex w-full flex-col">
-                                <div class="text-sm font-light">
+                                <!-- <div class="text-sm font-light">
                                     Full name:
-                                </div>
-                                <div class="">
+                                </div> -->
+                                <div class="text-lg font-semibold">
                                     {{ identity.title }}
                                     {{ identity.first_name }}
                                     {{ identity.middle_name }}
                                     {{ identity.last_name }}
                                 </div>
                             </div>
+
                             <div
+                                v-if="identity.description"
+                                class="flex w-full flex-col"
+                            >
+                                <div class="text-sm font-light">
+                                    About:
+                                </div>
+                                <div class="">
+                                    {{ identity.description }}
+                                </div>
+                            </div>
+
+                            <!-- <div class="flex gap-4">
+                                <CustomButton
+                                    label="Maria Kowalski"
+                                    icon="fa-brands fa-facebook"
+                                    rounded
+                                    @click="
+                                        isMissingInfoVisible = true
+                                    "
+                                />
+                                <CustomButton
+                                    label="maria.12"
+                                    icon="fa-brands fa-instagram"
+                                    rounded
+                                    @click="
+                                        isMissingInfoVisible = true
+                                    "
+                                />
+                            </div> -->
+
+                            <!-- <div
                                 v-if="identity.date_of_birth"
                                 class="flex w-full flex-col"
                             >
@@ -108,7 +175,8 @@ onMounted(() => {
                                 <div class="">
                                     {{ identity.date_of_birth }}
                                 </div>
-                            </div>
+                            </div> -->
+
                             <div
                                 v-if="identity.blood_type"
                                 class="flex w-full flex-col"
@@ -116,19 +184,12 @@ onMounted(() => {
                                 <div class="text-sm font-light">
                                     Blood type:
                                 </div>
-                                <div class="">
-                                    {{ identity.blood_type }}
-                                </div>
-                            </div>
-                            <div
-                                v-if="identity.description"
-                                class="flex w-full flex-col"
-                            >
-                                <div class="text-sm font-light">
-                                    Description:
-                                </div>
-                                <div class="">
-                                    {{ identity.description }}
+                                <div class="flex gap-2">
+                                    <div
+                                        class="rounded-full bg-red-500 px-3 py-1 font-semibold text-white"
+                                    >
+                                        {{ identity.blood_type }}
+                                    </div>
                                 </div>
                             </div>
 
@@ -139,8 +200,16 @@ onMounted(() => {
                                 <div class="text-sm font-light">
                                     Conditions:
                                 </div>
-                                <div class="">
-                                    {{ identity.conditions }}
+                                <div class="gap-g mt-2 flex">
+                                    <div
+                                        v-for="condition in identity.conditions.split(
+                                            ',',
+                                        )"
+                                        class="rounded-full bg-orange-400 px-3 py-1 font-semibold text-white"
+                                    >
+                                        {{ condition }}
+                                    </div>
+                                    <!-- {{ identity.conditions }} -->
                                 </div>
                             </div>
 
@@ -151,89 +220,24 @@ onMounted(() => {
                                 <div class="text-sm font-light">
                                     Allergies:
                                 </div>
-                                <div class="">
-                                    {{ identity.allergies }}
+                                <div class="mt-2 flex gap-2">
+                                    <div
+                                        v-for="allergy in identity.allergies.split(
+                                            ',',
+                                        )"
+                                        class="rounded-full bg-red-500 px-3 py-1 font-semibold text-white"
+                                    >
+                                        {{ allergy }}
+                                    </div>
                                 </div>
                             </div>
 
-                            <div
-                                v-if="
-                                    identity.caregiver_first_name ||
-                                    identity.caregiver_last_name ||
-                                    identity.caregiver_address ||
-                                    identity.caregiver_email ||
-                                    identity.caregiver_telephone
-                                "
-                            ></div>
-                        </CustomCard>
-                        <CustomCard>
-                            <span class="text-lg">
-                                Caregiver details
-                            </span>
-                            <div
-                                v-if="
-                                    identity.caregiver_first_name ||
-                                    identity.caregiver_last_name
-                                "
-                                class="flex w-full flex-col"
-                            >
-                                <div class="text-sm font-light">
-                                    Full name:
-                                </div>
-                                <div class="">
-                                    {{
-                                        identity.caregiver_first_name
-                                    }}
-                                    {{ identity.caregiver_last_name }}
-                                </div>
-                            </div>
+                            <!-- <Divider /> -->
+                            <CaregiverInfo :identity />
+                            <!-- <Divider /> -->
 
-                            <div
-                                v-if="identity.caregiver_address"
-                                class="flex w-full flex-col"
-                            >
-                                <div class="text-sm font-light">
-                                    Address
-                                </div>
-                                <div class="">
-                                    {{ identity.caregiver_address }}
-                                </div>
-                            </div>
-
-                            <div
-                                v-if="identity.caregiver_email"
-                                class="flex w-full flex-col"
-                            >
-                                <div class="text-sm font-light">
-                                    E-mail
-                                </div>
-                                <div class="">
-                                    {{ identity.caregiver_email }}
-                                </div>
-                            </div>
-
-                            <div
-                                v-if="identity.caregiver_telephone"
-                                class="flex w-full flex-col"
-                            >
-                                <div class="text-sm font-light">
-                                    Telephone
-                                </div>
-                                <div class="">
-                                    {{ identity.caregiver_telephone }}
-                                </div>
-                            </div>
-
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1190.0974839004116!2d14.642374007399441!3d53.37556094108917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4700a7075be39cff%3A0xf80a242ae45b546d!2sGreen%20Planet!5e0!3m2!1spl!2spl!4v1718543722224!5m2!1spl!2spl"
-                                width="100%"
-                                height="450"
-                                style="border: 0"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                            ></iframe>
-                        </CustomCard>
+                            <Logo />
+                        </div>
                     </div>
                 </div>
             </div>

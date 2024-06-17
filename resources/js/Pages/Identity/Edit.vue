@@ -171,10 +171,12 @@ const onMarkAsMissing = () => {
                 <div class="flex gap-2">
                     <CustomButton
                         icon="fa-solid fa-eye"
+                        rounded
                         @click="onShowIdentity(identity)"
                     />
                     <CustomButton
                         icon="fa-solid fa-qrcode"
+                        rounded
                         @click="onShowIdentity(identity)"
                     />
                 </div>
@@ -184,10 +186,9 @@ const onMarkAsMissing = () => {
                 class="flex w-full flex-col items-center justify-center gap-8"
             >
                 <QRCodeVue3
-                    :width="500"
-                    :height="500"
+                    :width="300"
+                    :height="300"
                     :typeNumber="40"
-                    :qrOptions="{ errorCorrectionLevel: 'H' }"
                     :dotsOptions="{
                         colorDark: '#FF681F',
                         colorLight: '#FF681F',
@@ -239,12 +240,14 @@ const onMarkAsMissing = () => {
                     icon="fa-solid fa-person-circle-question"
                     severity="warning"
                     class="w-full"
+                    rounded
                 />
                 <CustomButton
                     label="Delete"
                     icon="fa-solid fa-trash"
                     severity="danger"
                     class="w-full"
+                    rounded
                     @click="onDelete"
                 />
             </div>
