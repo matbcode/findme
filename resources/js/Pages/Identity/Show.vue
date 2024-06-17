@@ -91,7 +91,7 @@ onMounted(() => {
 
             <div class="relative mt-[30vh] lg:mb-8">
                 <div
-                    class="border-1 min-h-[70vh] rounded-2xl border border-2 border-white/50 bg-white/90 p-4 shadow-xl backdrop-blur-3xl"
+                    class="border-1 min-h-[70vh] rounded-2xl border border-2 border-white/50 bg-white/90 p-2 shadow-xl backdrop-blur-3xl sm:p-4"
                 >
                     <div
                         class="flex w-full items-center justify-center"
@@ -184,7 +184,7 @@ onMounted(() => {
                                 <div class="text-sm font-light">
                                     Blood type:
                                 </div>
-                                <div class="flex gap-2">
+                                <div class="mt-2 flex gap-2">
                                     <div
                                         class="rounded-full bg-red-500 px-3 py-1 font-semibold text-white"
                                     >

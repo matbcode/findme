@@ -19,7 +19,7 @@ const props = defineProps({
             identity.caregiver_email ||
             identity.caregiver_telephone
         "
-        class="border-1 flex w-full flex-col gap-8 rounded-xl border bg-white p-4 shadow-xl"
+        class="border-1 flex w-full flex-col gap-8 rounded-xl border bg-white p-4"
     >
         <div
             v-if="
