@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
+import Divider from 'primevue/divider'
+
 import CustomButton from '@/Components/Custom/CustomButton.vue'
 import Logo from '@/Components/Navbar/Logo.vue'
 import CaregiverInfo from './CaregiverInfo.vue'
@@ -31,7 +33,7 @@ onMounted(() => {
 
     document.addEventListener('scroll', (e) => {
         background.value.style.transform = `translateY(-${window.scrollY * 0.25}px)`
-        avatar.value.style.transform = `translateY(${window.scrollY * 0.1}px)`
+        // avatar.value.style.transform = `translateY(${window.scrollY * 0.1}px)`
     })
 })
 </script>
@@ -39,7 +41,7 @@ onMounted(() => {
     <img
         ref="background"
         id="thumbnail"
-        src="https://images.unsplash.com/photo-1559762717-99c81ac85459?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         class="background fixed w-screen scale-[1.2]"
     />
     <div class="flex flex-col items-center justify-center gap-8">
@@ -232,9 +234,9 @@ onMounted(() => {
                                 </div>
                             </div>
 
-                            <!-- <Divider /> -->
+                            <Divider />
                             <CaregiverInfo :identity />
-                            <!-- <Divider /> -->
+                            <Divider />
 
                             <Logo />
                         </div>

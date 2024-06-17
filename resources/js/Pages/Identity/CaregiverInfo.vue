@@ -19,7 +19,7 @@ const props = defineProps({
             identity.caregiver_email ||
             identity.caregiver_telephone
         "
-        class="border-1 flex w-full flex-col gap-8 rounded-xl border bg-white p-4"
+        class="flex w-full flex-col gap-8 rounded-xl"
     >
         <div
             v-if="
@@ -80,7 +80,6 @@ const props = defineProps({
                 label="Message"
                 icon="fa-solid fa-envelope"
                 class="w-full"
-                outlined
                 rounded
             />
             <CustomButton
@@ -89,7 +88,6 @@ const props = defineProps({
                 class="w-full"
                 severity="success"
                 rounded
-                raised
             />
         </div>
     </div>
