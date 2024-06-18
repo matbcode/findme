@@ -18,7 +18,7 @@ import Footer from '@/Components/Footers/Footer.vue'
     <CustomToast />
     <CustomContextMenu />
     <AuthenticatedLayout>
-        <div class="min-h-screen">
+        <div class="min-h-screen w-screen">
             <slot />
         </div>
     </AuthenticatedLayout>
