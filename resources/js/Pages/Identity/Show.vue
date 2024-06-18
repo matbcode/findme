@@ -103,9 +103,9 @@ onMounted(() => {
                 <Logo />
             </div> -->
 
-            <div class="relative mt-[20vh] sm:p-4">
+            <div class="relative mt-[30vh] sm:p-4">
                 <div
-                    class="border-1 min-h-[80vh] rounded-t-2xl bg-white drop-shadow-xl backdrop-blur-[100px] sm:rounded-2xl"
+                    class="border-1 min-h-[70vh] rounded-t-2xl bg-white drop-shadow-xl backdrop-blur-[100px] sm:rounded-2xl"
                 >
                     <div
                         class="mb-4 flex w-full flex-col items-center justify-center gap-6 p-3 sm:p-4"
@@ -116,7 +116,7 @@ onMounted(() => {
                             <!-- Person details -->
                             <!-- <div class="flex w-full justify-center"> -->
                             <div
-                                class="absolute -top-[140px] left-1/2 h-[240px] w-[240px] -translate-x-1/2 overflow-hidden rounded-full border-4 border-white drop-shadow-xl sm:left-8 sm:translate-x-0"
+                                class="absolute -top-[140px] left-1/2 h-[240px] w-[240px] -translate-x-1/2 overflow-hidden rounded-full border-4 border-white shadow-2xl sm:left-8 sm:translate-x-0"
                             >
                                 <img
                                     ref="avatar"
@@ -194,7 +194,7 @@ onMounted(() => {
                                 </div>
                                 <div class="mt-2 flex gap-2">
                                     <div
-                                        class="rounded-full bg-red-500 px-6 py-2 text-white"
+                                        class="rounded-full bg-red-500 px-4 py-2 text-sm text-white"
                                     >
                                         {{ identity.blood_type }}
                                     </div>
@@ -213,7 +213,7 @@ onMounted(() => {
                                         v-for="condition in identity.conditions.split(
                                             ',',
                                         )"
-                                        class="rounded-full bg-blue-400 px-6 py-2 text-white"
+                                        class="rounded-full bg-blue-400 px-4 py-2 text-sm text-white"
                                     >
                                         {{ condition }}
                                     </div>
@@ -233,7 +233,7 @@ onMounted(() => {
                                         v-for="allergy in identity.allergies.split(
                                             ',',
                                         )"
-                                        class="rounded-full bg-orange-500 px-6 py-2 font-semibold text-white"
+                                        class="rounded-full bg-orange-500 px-4 py-2 text-sm text-white"
                                     >
                                         {{ allergy }}
                                     </div>
