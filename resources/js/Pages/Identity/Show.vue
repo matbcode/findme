@@ -115,9 +115,9 @@ onMounted(() => {
         </div>
 
         <WideWrapper>
-            <div class="relative mt-[30vh] sm:p-4">
+            <div class="relative mt-[20vh] sm:p-4">
                 <div
-                    class="border-1 min-h-[70vh] bg-white drop-shadow-xl backdrop-blur-[100px] sm:rounded-2xl"
+                    class="border-1 bg-white shadow-2xl sm:rounded-2xl"
                 >
                     <div
                         class="mb-4 flex w-full flex-col items-center justify-center gap-6 p-3 sm:p-4"
@@ -125,10 +125,8 @@ onMounted(() => {
                         <div
                             class="flex w-full flex-col gap-8 pt-[100px]"
                         >
-                            <!-- Person details -->
-                            <!-- <div class="flex w-full justify-center"> -->
                             <div
-                                class="absolute -top-[140px] left-1/2 h-[240px] w-[240px] -translate-x-1/2 overflow-hidden rounded-full border-4 border-white shadow-2xl sm:left-8 sm:translate-x-0"
+                                class="absolute -top-[140px] left-1/2 h-[240px] w-[240px] -translate-x-1/2 overflow-hidden rounded-full border-4 border-white shadow-xl sm:left-8 sm:translate-x-0"
                             >
                                 <img
                                     ref="avatar"
@@ -138,98 +136,82 @@ onMounted(() => {
                                 />
                             </div>
 
-                            <!-- <Avatar
-                                size="250px"
-                                :user="identity"
-                                class="absolute -top-[140px] hidden rounded-full border-4 border-surface-50 bg-surface-50 shadow-2xl sm:block"
-                                rounded
-                            /> -->
-
-                            <!-- </div> -->
-
-                            <!-- <span class="text-lg">
-                                Person details
-                            </span> -->
                             <div
-                                class="flex w-full flex-col gap-3 text-center sm:text-left"
+                                class="flex flex-col gap-8 sm:flex-row"
                             >
-                                <!-- <div class="text-sm font-light">
-                                    Full name:
-                                </div> -->
-                                <div class="text-xl font-semibold">
-                                    {{ identity.title }}
-                                    {{ identity.first_name }}
-                                    {{ identity.middle_name }}
-                                    {{ identity.last_name }}
-                                </div>
-
-                                <div>
-                                    Aspiring
-                                    {{
-                                        identity.profession ||
-                                        'Software Engineer'
-                                    }}
-                                </div>
-
                                 <div
-                                    class="flex justify-center gap-2 sm:justify-start"
+                                    class="flex w-full flex-col gap-2 text-center sm:text-left"
                                 >
-                                    <font-awesome-icon
-                                        icon="fa-solid fa-location-dot"
-                                        size="xl"
-                                    />
-                                    <span class="font-semibold">
+                                    <div
+                                        class="text-xl font-semibold"
+                                    >
+                                        {{ identity.title }}
+                                        {{ identity.first_name }}
+                                        {{ identity.middle_name }}
+                                        {{ identity.last_name }}
+                                    </div>
+
+                                    <div>
+                                        Aspiring
                                         {{
-                                            identity.location ||
-                                            'Birmingham, UK'
+                                            identity.profession ||
+                                            'Software Engineer'
                                         }}
-                                    </span>
-                                </div>
-                            </div>
+                                    </div>
 
-                            <div
-                                class="border-1 flex w-full justify-center gap-2 divide-x divide-surface-100 rounded-2xl border border-surface-100 text-center shadow-sm sm:w-max"
-                            >
-                                <div class="w-1/3 p-4">
-                                    <span
-                                        class="text-2xl font-semibold"
-                                        >12</span
+                                    <div
+                                        class="flex justify-center gap-2 sm:justify-start"
                                     >
-                                    <div class="">Acknowledges</div>
+                                        <font-awesome-icon
+                                            icon="fa-solid fa-location-dot"
+                                            size="xl"
+                                        />
+                                        <span class="font-semibold">
+                                            {{
+                                                identity.location ||
+                                                'Birmingham, UK'
+                                            }}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="w-1/3 p-4">
-                                    <span
-                                        class="text-2xl font-semibold"
-                                        >30</span
-                                    >
-                                    <div class="">Following</div>
-                                </div>
-                                <div class="w-1/3 p-4">
-                                    <span
-                                        class="text-2xl font-semibold"
-                                        >122</span
-                                    >
-                                    <div class="">Followers</div>
-                                </div>
-                            </div>
 
-                            <div
-                                class="flex justify-center sm:justify-start"
-                            >
                                 <div
-                                    class="flex w-full gap-2 sm:w-1/2 lg:w-1/4"
+                                    class="border-1 flex w-full items-center justify-center gap-2 divide-x divide-surface-100 rounded-2xl border border-surface-100 text-center sm:w-max"
                                 >
-                                    <!-- <CustomButton
-                                        label="Get in touch"
-                                        class="w-full"
-                                        outlined
-                                    /> -->
-                                    <!-- <CustomButton
-                                        label="Follow"
-                                        class="w-full"
-                                        rounded
-                                        outlined
-                                    /> -->
+                                    <div class="w-1/3 p-4">
+                                        <span
+                                            class="text-xl font-semibold"
+                                            >12</span
+                                        >
+                                        <div class="text-sm">
+                                            Acknowledges
+                                        </div>
+                                    </div>
+                                    <div class="w-1/3 p-4">
+                                        <span
+                                            class="text-xl font-semibold"
+                                            >30</span
+                                        >
+                                        <div class="text-sm">
+                                            Following
+                                        </div>
+                                    </div>
+                                    <div class="w-1/3 p-4">
+                                        <span
+                                            class="text-xl font-semibold"
+                                            >122</span
+                                        >
+                                        <div class="text-sm">
+                                            Followers
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex justify-center sm:justify-start lg:justify-end"
+                            >
+                                <div class="flex w-full gap-2">
                                     <CustomButton
                                         label="Follow"
                                         class="w-full"
@@ -246,7 +228,7 @@ onMounted(() => {
                                 </div>
                             </div>
 
-                            <Divider />
+                            <!-- <Divider /> -->
 
                             <div
                                 v-if="identity.description"
@@ -261,7 +243,27 @@ onMounted(() => {
                                 </div>
                             </div>
 
-                            <Divider />
+                            <div class="flex w-full flex-col gap-4">
+                                <!-- <div class="">
+                                    Find me on social media:
+                                </div> -->
+                                <div class="flex gap-2">
+                                    <CustomButton
+                                        label="Maria Kowalski"
+                                        icon="fa-brands fa-facebook"
+                                        rounded
+                                        size="small"
+                                    />
+                                    <CustomButton
+                                        label="maria.12"
+                                        icon="fa-brands fa-instagram"
+                                        rounded
+                                        size="small"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- <Divider /> -->
 
                             <div class="flex flex-col gap-8">
                                 <SelectButton
@@ -293,7 +295,7 @@ onMounted(() => {
                                     My Strengths and Skills:
                                 </div> -->
                                     <div
-                                        class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                                        class="grid grid-cols-1 gap-4 sm:grid-cols-2"
                                     >
                                         <BlockInfo
                                             title="🤝 Teamwork Skills"
@@ -325,7 +327,7 @@ onMounted(() => {
                                     My Challenges:
                                 </div> -->
                                     <div
-                                        class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                                        class="grid grid-cols-1 gap-4 sm:grid-cols-2"
                                     >
                                         <BlockInfo
                                             title="🧠 Memory & Information Processing"
@@ -412,7 +414,7 @@ onMounted(() => {
                                         {{ allergy }}
                                     </div> -->
                                     <div
-                                        class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                                        class="grid grid-cols-1 gap-4 sm:grid-cols-2"
                                     >
                                         <BlockInfo
                                             title="🍎 Food Allergies"
@@ -438,29 +440,7 @@ onMounted(() => {
                                 </div>
                             </div>
 
-                            <Divider />
-
-                            <div class="flex w-full flex-col gap-4">
-                                <!-- <div class="">
-                                    Find me on social media:
-                                </div> -->
-                                <div class="flex gap-2">
-                                    <CustomButton
-                                        label="Maria Kowalski"
-                                        icon="fa-brands fa-facebook"
-                                        rounded
-                                        outlined
-                                        size="small"
-                                    />
-                                    <CustomButton
-                                        label="maria.12"
-                                        icon="fa-brands fa-instagram"
-                                        rounded
-                                        outlined
-                                        size="small"
-                                    />
-                                </div>
-                            </div>
+                            <!-- <Divider /> -->
 
                             <!-- <Divider /> -->
 
@@ -476,7 +456,7 @@ onMounted(() => {
                         </div>
                     </div>
                     <div
-                        class="flex gap-2 bg-surface-50 p-3 text-sm text-surface-300 sm:p-4"
+                        class="flex gap-2 bg-white p-3 text-sm text-surface-400 sm:rounded-b-2xl sm:p-4"
                     >
                         <div class="flex flex-col gap-3">
                             <Logo width="125px" black />
