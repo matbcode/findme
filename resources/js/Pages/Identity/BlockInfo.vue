@@ -13,7 +13,9 @@ const props = defineProps({
 })
 </script>
 <template>
-    <div class="flex w-full flex-col gap-3 rounded-xl bg-white p-3">
+    <div
+        class="flex w-full flex-col gap-3 rounded-xl bg-surface-50 p-3"
+    >
         <span class="font-semibold">
             {{ title }}
         </span>

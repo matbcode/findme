@@ -110,7 +110,7 @@ onMounted(() => {
         <WideWrapper>
             <div class="relative mt-[20vh] sm:p-4">
                 <div
-                    class="border-1 bg-surface-50 shadow-2xl sm:rounded-2xl"
+                    class="border-1 bg-white shadow-2xl sm:rounded-2xl"
                 >
                     <div
                         class="mb-4 flex w-full flex-col items-center justify-center gap-6 p-3 sm:p-4"
@@ -448,7 +448,7 @@ onMounted(() => {
                         </div>
                     </div>
                     <div
-                        class="flex gap-2 bg-surface-50 p-3 text-sm text-surface-400 sm:rounded-b-2xl sm:p-4"
+                        class="flex gap-2 bg-white p-3 text-sm text-surface-400 sm:rounded-b-2xl sm:p-4"
                     >
                         <div class="flex flex-col gap-3">
                             <Logo width="125px" black />
