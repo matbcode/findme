@@ -164,39 +164,38 @@ const onMarkAsMissing = () => {
 }
 </script>
 <template>
-    <WideWrapper>
-        <div class="flex w-full flex-col gap-12">
-            <div class="flex justify-between">
-                <Logo />
-                <div class="flex gap-2">
-                    <CustomButton
-                        icon="fa-solid fa-eye"
-                        rounded
-                        @click="onShowIdentity(identity)"
-                    />
-                    <CustomButton
-                        icon="fa-solid fa-qrcode"
-                        rounded
-                        @click="onShowIdentity(identity)"
-                    />
-                </div>
-            </div>
-
-            <div
-                class="flex w-full flex-col items-center justify-center gap-8"
-            >
-                <QRCodeVue3
-                    :width="300"
-                    :height="300"
-                    :typeNumber="40"
-                    :dotsOptions="{
-                        colorDark: '#FF681F',
-                        colorLight: '#FF681F',
-                    }"
-                    :value="`https://locately.uk/id/${identity.id}`"
+    <WideWrapper class="p-3 sm:p-4">
+        <div class="flex justify-between">
+            <Logo />
+            <div class="flex gap-2">
+                <CustomButton
+                    icon="fa-solid fa-eye"
+                    rounded
+                    @click="onShowIdentity(identity)"
                 />
+                <CustomButton
+                    icon="fa-solid fa-qrcode"
+                    rounded
+                    @click="onShowIdentity(identity)"
+                />
+            </div>
+        </div>
 
-                <!-- <GMapMap
+        <div
+            class="flex w-full flex-col items-center justify-center gap-8"
+        >
+            <QRCodeVue3
+                :width="300"
+                :height="300"
+                :typeNumber="40"
+                :dotsOptions="{
+                    colorDark: '#FF681F',
+                    colorLight: '#FF681F',
+                }"
+                :value="`https://locately.uk/id/${identity.id}`"
+            />
+
+            <!-- <GMapMap
                         :center="center"
                         :zoom="7"
                         map-type-id="terrain"
@@ -213,44 +212,43 @@ const onMarkAsMissing = () => {
                             />
                         </GMapCluster>
                     </GMapMap> -->
-            </div>
-            <!-- <h1 class="text-2xl font-semibold text-gray-800">
+        </div>
+        <!-- <h1 class="text-2xl font-semibold text-gray-800">
                 Please fill in the details below
             </h1> -->
-            <Avatar
-                size="300px"
-                :user="identity"
-                editable
-                @edit="onEditAvatar"
+        <Avatar
+            size="300px"
+            :user="identity"
+            editable
+            @edit="onEditAvatar"
+        />
+        <FormWrapper :formBody class="h-full w-full" />
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1190.0974839004116!2d14.642374007399441!3d53.37556094108917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4700a7075be39cff%3A0xf80a242ae45b546d!2sGreen%20Planet!5e0!3m2!1spl!2spl!4v1718543722224!5m2!1spl!2spl"
+            width="100%"
+            height="450"
+            style="border: 0"
+            class="rounded-2xl shadow-2xl"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div class="flex w-full gap-2">
+            <CustomButton
+                label="Set missing"
+                icon="fa-solid fa-person-circle-question"
+                severity="warning"
+                class="w-full"
+                rounded
             />
-            <FormWrapper :formBody class="h-full w-full" />
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1190.0974839004116!2d14.642374007399441!3d53.37556094108917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4700a7075be39cff%3A0xf80a242ae45b546d!2sGreen%20Planet!5e0!3m2!1spl!2spl!4v1718543722224!5m2!1spl!2spl"
-                width="100%"
-                height="450"
-                style="border: 0"
-                class="rounded-2xl shadow-2xl"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <div class="flex w-full gap-2">
-                <CustomButton
-                    label="Set missing"
-                    icon="fa-solid fa-person-circle-question"
-                    severity="warning"
-                    class="w-full"
-                    rounded
-                />
-                <CustomButton
-                    label="Delete"
-                    icon="fa-solid fa-trash"
-                    severity="danger"
-                    class="w-full"
-                    rounded
-                    @click="onDelete"
-                />
-            </div>
+            <CustomButton
+                label="Delete"
+                icon="fa-solid fa-trash"
+                severity="danger"
+                class="w-full"
+                rounded
+                @click="onDelete"
+            />
         </div>
     </WideWrapper>
 </template>

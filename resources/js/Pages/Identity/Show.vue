@@ -6,6 +6,9 @@ import Divider from 'primevue/divider'
 import CustomButton from '@/Components/Custom/CustomButton.vue'
 import Logo from '@/Components/Navbar/Logo.vue'
 import CaregiverInfo from './CaregiverInfo.vue'
+import WideWrapper from '@/Components/PageWrappers/WideWrapper.vue'
+
+import BlockInfo from './BlockInfo.vue'
 
 const props = defineProps({
     identity: {
@@ -16,7 +19,7 @@ const props = defineProps({
 const background = ref(null)
 const avatar = ref(null)
 
-const isMissingInfoVisible = ref(true)
+const isMissingInfoVisible = ref(false)
 
 const onShareLocation = () => {
     console.log('Share location')
@@ -45,7 +48,7 @@ onMounted(() => {
     <img
         ref="background"
         id="thumbnail"
-        src="https://images.unsplash.com/photo-1617055669577-64245d59b81a?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1586455122341-927f2dec0691?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         class="background fixed w-screen scale-[1.2]"
     />
     <div
@@ -98,14 +101,10 @@ onMounted(() => {
             </div>
         </div>
 
-        <div class="flex max-w-screen-xl flex-col gap-4">
-            <!-- <div class="m-4">
-                <Logo />
-            </div> -->
-
+        <WideWrapper>
             <div class="relative mt-[30vh] sm:p-4">
                 <div
-                    class="border-1 min-h-[70vh] rounded-t-2xl bg-white drop-shadow-xl backdrop-blur-[100px] sm:rounded-2xl"
+                    class="border-1 min-h-[70vh] bg-white drop-shadow-xl backdrop-blur-[100px] sm:rounded-2xl"
                 >
                     <div
                         class="mb-4 flex w-full flex-col items-center justify-center gap-6 p-3 sm:p-4"
@@ -138,42 +137,151 @@ onMounted(() => {
                             <!-- <span class="text-lg">
                                 Person details
                             </span> -->
-                            <div class="flex w-full flex-col">
+                            <div
+                                class="flex w-full flex-col gap-3 text-center sm:text-left"
+                            >
                                 <!-- <div class="text-sm font-light">
                                     Full name:
                                 </div> -->
-                                <div class="text-lg font-semibold">
+                                <div class="text-xl font-semibold">
                                     {{ identity.title }}
                                     {{ identity.first_name }}
                                     {{ identity.middle_name }}
                                     {{ identity.last_name }}
                                 </div>
+
+                                <div>
+                                    Aspiring
+                                    {{
+                                        identity.profession ||
+                                        'Software Engineer'
+                                    }}
+                                </div>
+
+                                <div
+                                    class="flex justify-center gap-2 sm:justify-start"
+                                >
+                                    <font-awesome-icon
+                                        icon="fa-solid fa-location-dot"
+                                        size="xl"
+                                    />
+                                    <span class="font-semibold">
+                                        {{
+                                            identity.location ||
+                                            'Birmingham, UK'
+                                        }}
+                                    </span>
+                                </div>
                             </div>
+
+                            <div
+                                class="flex w-full justify-center gap-2 divide-x divide-surface-100 rounded-2xl bg-surface-50 text-center shadow-xl sm:w-max"
+                            >
+                                <div class="w-1/3 p-4">
+                                    <span
+                                        class="text-xl font-semibold"
+                                        >12</span
+                                    >
+                                    <div class="text-surface-300">
+                                        Acknowledges
+                                    </div>
+                                </div>
+                                <div class="w-1/3 p-4">
+                                    <span
+                                        class="text-xl font-semibold"
+                                        >30</span
+                                    >
+                                    <div class="text-surface-300">
+                                        Following
+                                    </div>
+                                </div>
+                                <div class="w-1/3 p-4">
+                                    <span
+                                        class="text-xl font-semibold"
+                                        >122</span
+                                    >
+                                    <div class="text-surface-300">
+                                        Followers
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex justify-center sm:justify-start"
+                            >
+                                <div
+                                    class="flex w-full gap-2 sm:w-1/2 lg:w-1/4"
+                                >
+                                    <!-- <CustomButton
+                                        label="Get in touch"
+                                        class="w-full"
+                                        outlined
+                                    /> -->
+                                    <!-- <CustomButton
+                                        label="Follow"
+                                        class="w-full"
+                                        rounded
+                                        outlined
+                                    /> -->
+                                    <CustomButton
+                                        label="Follow"
+                                        class="w-full"
+                                        rounded
+                                        outlined
+                                    />
+                                    <CustomButton
+                                        label="Give kudos"
+                                        icon="fa-solid fa-thumbs-up"
+                                        class="w-full"
+                                        severity="info"
+                                        rounded
+                                        raised
+                                    />
+                                </div>
+                            </div>
+
+                            <Divider />
 
                             <div
                                 v-if="identity.description"
                                 class="flex w-full flex-col"
                             >
-                                <div class="font-light">About:</div>
-                                <div class="">
+                                <!-- <div class="font-light">About:</div> -->
+                                <div
+                                    class=""
+                                    style="white-space: pre-line"
+                                >
                                     {{ identity.description }}
                                 </div>
                             </div>
 
-                            <div class="flex justify-center gap-2">
-                                <CustomButton
-                                    label="Maria Kowalski"
-                                    icon="fa-brands fa-facebook"
-                                    rounded
-                                />
-                                <CustomButton
-                                    label="maria.12"
-                                    icon="fa-brands fa-instagram"
-                                    rounded
-                                />
+                            <div class="flex flex-col gap-3">
+                                <div class="font-semibold">
+                                    Areas for Growth:
+                                </div>
+                                <div
+                                    class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                                >
+                                    <BlockInfo
+                                        title="🧠 Memory & Information Processing"
+                                        description="Issues with short-term memory, information processing, and recalling details."
+                                    />
+                                    <BlockInfo
+                                        title="🎯 Focus & Attention"
+                                        description="Problems with maintaining attention and staying focused on tasks over time."
+                                    />
+                                    <BlockInfo
+                                        title="🔄 Cognitive Flexibility"
+                                        description="Trouble adapting to changes, rigid thinking, resistance to new experiences."
+                                    />
+                                    <BlockInfo
+                                        title="📚 School or Work Problems"
+                                        description="Challenges in educational or professional settings, such as managing tasks or relationships with colleagues."
+                                    />
+                                </div>
                             </div>
 
-                            <div
+                            <!-- <div
                                 v-if="identity.date_of_birth"
                                 class="flex w-full flex-col"
                             >
@@ -217,43 +325,90 @@ onMounted(() => {
                                     >
                                         {{ condition }}
                                     </div>
-                                    <!-- {{ identity.conditions }} -->
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div
                                 v-if="identity.allergies"
                                 class="flex w-full flex-col"
                             >
-                                <div class="font-light">
+                                <div class="font-semibold">
                                     Allergies:
                                 </div>
-                                <div class="mt-2 flex gap-2">
-                                    <div
+                                <div class="mt-2 flex flex-col gap-3">
+                                    <!-- <div
                                         v-for="allergy in identity.allergies.split(
                                             ',',
                                         )"
                                         class="rounded-full bg-orange-500 px-4 py-2 text-sm text-white"
                                     >
                                         {{ allergy }}
-                                    </div>
+                                    </div> -->
+                                    <BlockInfo
+                                        title="🍎 Food Allergies"
+                                        description="Allergic reactions to specific foods or food ingredients."
+                                        example="Peanuts, shellfish, milk, eggs."
+                                    />
+                                    <BlockInfo
+                                        title="💊 Medication Allergies"
+                                        description="Adverse reactions to specific medications or drug classes."
+                                        example="Penicillin, aspirin, sulfa drugs."
+                                    />
+                                    <BlockInfo
+                                        title="🌿 Environmental Allergies"
+                                        description="Sensitivity to environmental factors, such as pollen, dust, or pet dander."
+                                        example="Pollen, dust mites, pet dander."
+                                    />
+                                    <BlockInfo
+                                        title="🐝 Insect Allergies"
+                                        description="Allergic reactions to insect bites or stings."
+                                        example="Bees, wasps, fire ants."
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="flex w-full flex-col gap-4">
+                                <div class="font-semibold">
+                                    Socials:
+                                </div>
+                                <div class="flex gap-2">
+                                    <CustomButton
+                                        label="Maria Kowalski"
+                                        icon="fa-brands fa-facebook"
+                                        rounded
+                                    />
+                                    <CustomButton
+                                        label="maria.12"
+                                        icon="fa-brands fa-instagram"
+                                        rounded
+                                    />
                                 </div>
                             </div>
 
                             <Divider />
-                            <CaregiverInfo :identity />
+
+                            <CustomButton
+                                label="Get in touch"
+                                class="w-full"
+                                icon="fa-solid fa-envelope"
+                                rounded
+                                severity="success"
+                            />
+
+                            <!-- <CaregiverInfo :identity /> -->
                         </div>
                     </div>
                     <div
                         class="flex gap-2 bg-surface-50 p-3 text-sm text-surface-300 sm:p-4"
                     >
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-3">
                             <Logo width="125px" black />
 
-                            Locately is a platform that helps you find
-                            your loved ones
+                            A social platform for sharing, connecting,
+                            and celebrating the creativity and
+                            insights of diverse thinkers.
 
-                            <div class="">
+                            <div class="text-xs">
                                 <span class="font-medium">
                                     Copyright © 2024 NeonByte Ltd
                                 </span>
@@ -263,6 +418,6 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-        </div>
+        </WideWrapper>
     </div>
 </template>

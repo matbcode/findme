@@ -40,12 +40,12 @@
 }
 
 body > div.transition.duration-200 {
-    @apply flex justify-center items-center
+    @apply flex justify-center items-center bg-white
 }
 
 html {
   scroll-behavior: smooth;
-  @apply bg-surface-900
+  @apply bg-white
 }
 
 * { scroll-margin-top: 100px; }

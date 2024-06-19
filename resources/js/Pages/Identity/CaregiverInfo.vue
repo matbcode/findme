@@ -76,12 +76,11 @@ const props = defineProps({
             class="rounded-2xl outline outline-8 -outline-offset-4 outline-white"
         ></iframe>
 
-        <div class="flex flex-col gap-6 sm:flex-row">
+        <div class="flex gap-3">
             <CustomButton
                 label="Message"
                 icon="fa-solid fa-envelope"
                 class="w-full"
-                size="large"
                 rounded
             />
             <CustomButton
@@ -89,7 +88,6 @@ const props = defineProps({
                 icon="fa-solid fa-phone"
                 class="w-full"
                 severity="success"
-                size="large"
                 rounded
             />
         </div>

@@ -31,49 +31,43 @@ const onShowIdentity = (identity) => {
 }
 </script>
 <template>
-    <WideWrapper>
-        <div class="flex flex-col justify-center gap-8">
-            <h1 class="flex justify-between">
-                <Logo />
-                <div class="flex gap-2">
-                    <CustomButton
-                        icon="fa-solid fa-user-plus"
-                        severity="success"
-                        @click="onCreateIdentity"
-                    />
-                    <!-- <CustomButton
+    <WideWrapper class="p-3 sm:p-4">
+        <div class="flex justify-between">
+            <Logo />
+            <div class="flex gap-2">
+                <CustomButton
+                    icon="fa-solid fa-user-plus"
+                    severity="success"
+                    @click="onCreateIdentity"
+                />
+                <!-- <CustomButton
                         label="Add item"
                         icon="fa-solid fa-circle-plus"
                         @click="onCreateIdentity"
                     /> -->
+            </div>
+        </div>
+        <div class="flex h-full flex-col gap-8">
+            <div
+                v-for="identity in identities"
+                :key="identity.id"
+                class="flex items-center items-center justify-between gap-2"
+            >
+                <div class="flex gap-1">
+                    <p>{{ identity.first_name }}</p>
+                    <p>{{ identity.middle_name }}</p>
+                    <p>{{ identity.last_name }}</p>
                 </div>
-            </h1>
-            <div class="flex h-full flex-col gap-8">
-                <div
-                    v-for="identity in identities"
-                    :key="identity.id"
-                    class="flex items-center items-center justify-between gap-2"
-                >
-                    <div class="flex gap-1">
-                        <!-- <p>{{ identity.id }}</p> -->
-                        <p>{{ identity.title }}</p>
-                        <p>{{ identity.first_name }}</p>
-                        <p>{{ identity.middle_name }}</p>
-                        <p>{{ identity.last_name }}</p>
-                        <p>{{ identity.nickname }}</p>
-                        <p>{{ identity.dob }}</p>
-                    </div>
-                    <div class="flex gap-2">
-                        <CustomButton
-                            icon="fa-solid fa-eye"
-                            @click="onShowIdentity(identity)"
-                        />
-                        <CustomButton
-                            icon="fa-solid fa-user-pen"
-                            severity="success"
-                            @click="onEditIdentity(identity)"
-                        />
-                    </div>
+                <div class="flex gap-2">
+                    <CustomButton
+                        icon="fa-solid fa-eye"
+                        @click="onShowIdentity(identity)"
+                    />
+                    <CustomButton
+                        icon="fa-solid fa-user-pen"
+                        severity="success"
+                        @click="onEditIdentity(identity)"
+                    />
                 </div>
             </div>
         </div>
