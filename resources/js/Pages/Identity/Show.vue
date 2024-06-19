@@ -2,6 +2,9 @@
 import { ref, onMounted } from 'vue'
 
 import Divider from 'primevue/divider'
+import SelectButton from 'primevue/selectbutton'
+import TabView from 'primevue/tabview'
+import TabPanel from 'primevue/tabpanel'
 
 import CustomButton from '@/Components/Custom/CustomButton.vue'
 import Logo from '@/Components/Navbar/Logo.vue'
@@ -20,6 +23,16 @@ const background = ref(null)
 const avatar = ref(null)
 
 const isMissingInfoVisible = ref(false)
+
+const currentTab = ref({
+    label: 'Strengths',
+    icon: 'fa-solid fa-thumbs-up',
+})
+const tabViews = ref([
+    { label: 'Strengths', icon: 'fa-solid fa-thumbs-up' },
+    { label: 'Challenges', icon: 'fa-solid fa-thumbs-down' },
+    { label: 'Allergies', icon: 'fa-solid fa-allergies' },
+])
 
 const onShareLocation = () => {
     console.log('Share location')
@@ -175,34 +188,28 @@ onMounted(() => {
                             </div>
 
                             <div
-                                class="flex w-full justify-center gap-2 divide-x divide-surface-100 rounded-2xl bg-surface-50 text-center shadow-xl sm:w-max"
+                                class="border-1 flex w-full justify-center gap-2 divide-x divide-surface-100 rounded-2xl border border-surface-100 text-center shadow-sm sm:w-max"
                             >
                                 <div class="w-1/3 p-4">
                                     <span
-                                        class="text-xl font-semibold"
+                                        class="text-2xl font-semibold"
                                         >12</span
                                     >
-                                    <div class="text-surface-300">
-                                        Acknowledges
-                                    </div>
+                                    <div class="">Acknowledges</div>
                                 </div>
                                 <div class="w-1/3 p-4">
                                     <span
-                                        class="text-xl font-semibold"
+                                        class="text-2xl font-semibold"
                                         >30</span
                                     >
-                                    <div class="text-surface-300">
-                                        Following
-                                    </div>
+                                    <div class="">Following</div>
                                 </div>
                                 <div class="w-1/3 p-4">
                                     <span
-                                        class="text-xl font-semibold"
+                                        class="text-2xl font-semibold"
                                         >122</span
                                     >
-                                    <div class="text-surface-300">
-                                        Followers
-                                    </div>
+                                    <div class="">Followers</div>
                                 </div>
                             </div>
 
@@ -230,12 +237,11 @@ onMounted(() => {
                                         outlined
                                     />
                                     <CustomButton
-                                        label="Give kudos"
+                                        label="Endorse"
                                         icon="fa-solid fa-thumbs-up"
                                         class="w-full"
                                         severity="info"
                                         rounded
-                                        raised
                                     />
                                 </div>
                             </div>
@@ -248,40 +254,99 @@ onMounted(() => {
                             >
                                 <!-- <div class="font-light">About:</div> -->
                                 <div
-                                    class=""
+                                    class="p-1.5"
                                     style="white-space: pre-line"
                                 >
                                     {{ identity.description }}
                                 </div>
                             </div>
 
-                            <div class="flex flex-col gap-3">
-                                <div class="font-semibold">
-                                    Areas for Growth:
-                                </div>
-                                <div
-                                    class="grid grid-cols-1 gap-3 sm:grid-cols-2"
-                                >
-                                    <BlockInfo
-                                        title="🧠 Memory & Information Processing"
-                                        description="Issues with short-term memory, information processing, and recalling details."
-                                    />
-                                    <BlockInfo
-                                        title="🎯 Focus & Attention"
-                                        description="Problems with maintaining attention and staying focused on tasks over time."
-                                    />
-                                    <BlockInfo
-                                        title="🔄 Cognitive Flexibility"
-                                        description="Trouble adapting to changes, rigid thinking, resistance to new experiences."
-                                    />
-                                    <BlockInfo
-                                        title="📚 School or Work Problems"
-                                        description="Challenges in educational or professional settings, such as managing tasks or relationships with colleagues."
-                                    />
-                                </div>
-                            </div>
+                            <Divider />
 
-                            <!-- <div
+                            <div class="flex flex-col gap-8">
+                                <SelectButton
+                                    v-model="currentTab"
+                                    :options="tabViews"
+                                >
+                                    <template #option="{ option }">
+                                        <div
+                                            class="flex w-full items-center justify-center gap-2 text-center text-sm font-semibold"
+                                        >
+                                            <!-- <font-awesome-icon
+                                                :icon="option.icon"
+                                            /> -->
+                                            <span>{{
+                                                option.label
+                                            }}</span>
+                                        </div>
+                                    </template>
+                                </SelectButton>
+
+                                <div
+                                    v-if="
+                                        currentTab.label ===
+                                        'Strengths'
+                                    "
+                                    class="flex flex-col gap-3"
+                                >
+                                    <!-- <div class="font-semibold">
+                                    My Strengths and Skills:
+                                </div> -->
+                                    <div
+                                        class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                                    >
+                                        <BlockInfo
+                                            title="🤝 Teamwork Skills"
+                                            description="Ability to work effectively with others, communicate ideas, and collaborate on projects."
+                                        />
+                                        <BlockInfo
+                                            title="📈 Problem-Solving Skills"
+                                            description="Capacity to identify issues, analyze data, and develop solutions to complex problems."
+                                        />
+                                        <BlockInfo
+                                            title="🎨 Creativity & Innovation"
+                                            description="Talent for generating new ideas, designing products, and developing original concepts."
+                                        />
+                                        <BlockInfo
+                                            title="📊 Analytical Skills"
+                                            description="Capability to interpret data, identify trends, and make informed decisions based on evidence."
+                                        />
+                                    </div>
+                                </div>
+
+                                <div
+                                    v-if="
+                                        currentTab.label ===
+                                        'Challenges'
+                                    "
+                                    class="flex flex-col gap-3"
+                                >
+                                    <!-- <div class="font-semibold">
+                                    My Challenges:
+                                </div> -->
+                                    <div
+                                        class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                                    >
+                                        <BlockInfo
+                                            title="🧠 Memory & Information Processing"
+                                            description="Issues with short-term memory, information processing, and recalling details."
+                                        />
+                                        <BlockInfo
+                                            title="🎯 Focus & Attention"
+                                            description="Problems with maintaining attention and staying focused on tasks over time."
+                                        />
+                                        <BlockInfo
+                                            title="🔄 Cognitive Flexibility"
+                                            description="Trouble adapting to changes, rigid thinking, resistance to new experiences."
+                                        />
+                                        <BlockInfo
+                                            title="📚 School or Work Problems"
+                                            description="Challenges in educational or professional settings, such as managing tasks or relationships with colleagues."
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- <div
                                 v-if="identity.date_of_birth"
                                 class="flex w-full flex-col"
                             >
@@ -328,14 +393,16 @@ onMounted(() => {
                                 </div>
                             </div> -->
 
-                            <div
-                                v-if="identity.allergies"
-                                class="flex w-full flex-col"
-                            >
-                                <div class="font-semibold">
-                                    Allergies:
-                                </div>
-                                <div class="mt-2 flex flex-col gap-3">
+                                <div
+                                    v-if="
+                                        currentTab.label ===
+                                        'Allergies'
+                                    "
+                                    class="flex flex-col gap-3"
+                                >
+                                    <!-- <div class="font-semibold">
+                                    My allergies:
+                                </div> -->
                                     <!-- <div
                                         v-for="allergy in identity.allergies.split(
                                             ',',
@@ -344,56 +411,66 @@ onMounted(() => {
                                     >
                                         {{ allergy }}
                                     </div> -->
-                                    <BlockInfo
-                                        title="🍎 Food Allergies"
-                                        description="Allergic reactions to specific foods or food ingredients."
-                                        example="Peanuts, shellfish, milk, eggs."
-                                    />
-                                    <BlockInfo
-                                        title="💊 Medication Allergies"
-                                        description="Adverse reactions to specific medications or drug classes."
-                                        example="Penicillin, aspirin, sulfa drugs."
-                                    />
-                                    <BlockInfo
-                                        title="🌿 Environmental Allergies"
-                                        description="Sensitivity to environmental factors, such as pollen, dust, or pet dander."
-                                        example="Pollen, dust mites, pet dander."
-                                    />
-                                    <BlockInfo
-                                        title="🐝 Insect Allergies"
-                                        description="Allergic reactions to insect bites or stings."
-                                        example="Bees, wasps, fire ants."
-                                    />
-                                </div>
-                            </div>
-
-                            <div class="flex w-full flex-col gap-4">
-                                <div class="font-semibold">
-                                    Socials:
-                                </div>
-                                <div class="flex gap-2">
-                                    <CustomButton
-                                        label="Maria Kowalski"
-                                        icon="fa-brands fa-facebook"
-                                        rounded
-                                    />
-                                    <CustomButton
-                                        label="maria.12"
-                                        icon="fa-brands fa-instagram"
-                                        rounded
-                                    />
+                                    <div
+                                        class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                                    >
+                                        <BlockInfo
+                                            title="🍎 Food Allergies"
+                                            description="Allergic reactions to specific foods or food ingredients."
+                                            example="Peanuts, shellfish, milk, eggs."
+                                        />
+                                        <BlockInfo
+                                            title="💊 Medication Allergies"
+                                            description="Adverse reactions to specific medications or drug classes."
+                                            example="Penicillin, aspirin, sulfa drugs."
+                                        />
+                                        <BlockInfo
+                                            title="🌿 Environmental Allergies"
+                                            description="Sensitivity to environmental factors, such as pollen, dust, or pet dander."
+                                            example="Pollen, dust mites, pet dander."
+                                        />
+                                        <BlockInfo
+                                            title="🐝 Insect Allergies"
+                                            description="Allergic reactions to insect bites or stings."
+                                            example="Bees, wasps, fire ants."
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             <Divider />
 
-                            <CustomButton
+                            <div class="flex w-full flex-col gap-4">
+                                <!-- <div class="">
+                                    Find me on social media:
+                                </div> -->
+                                <div class="flex gap-2">
+                                    <CustomButton
+                                        label="Maria Kowalski"
+                                        icon="fa-brands fa-facebook"
+                                        rounded
+                                        outlined
+                                        size="small"
+                                    />
+                                    <CustomButton
+                                        label="maria.12"
+                                        icon="fa-brands fa-instagram"
+                                        rounded
+                                        outlined
+                                        size="small"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- <Divider /> -->
+
+                            <!-- <CustomButton
                                 label="Get in touch"
                                 class="w-full"
                                 icon="fa-solid fa-envelope"
                                 rounded
                                 severity="success"
-                            />
+                            /> -->
 
                             <!-- <CaregiverInfo :identity /> -->
                         </div>
