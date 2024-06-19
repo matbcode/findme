@@ -48,13 +48,6 @@ const onShareLocation = () => {
 
 onMounted(() => {
     console.log('Identity:', props.identity)
-
-    // background.value.style.transform = `translateY(-${0 * 0.25}px)`
-
-    // document.addEventListener('scroll', (e) => {
-    // background.value.style.transform = `translateY(-${window.scrollY * 0.25}px)`
-    // avatar.value.style.transform = `translateY(${window.scrollY * 0.1}px)`
-    // })
 })
 </script>
 <template>
@@ -62,7 +55,7 @@ onMounted(() => {
         ref="background"
         id="thumbnail"
         src="https://images.unsplash.com/photo-1586455122341-927f2dec0691?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        class="background fixed w-screen scale-[1.2]"
+        class="background fixed w-screen bg-cover"
     />
     <div
         class="flex flex-col items-center justify-center gap-8 bg-surface-50"
@@ -117,7 +110,7 @@ onMounted(() => {
         <WideWrapper>
             <div class="relative mt-[20vh] sm:p-4">
                 <div
-                    class="border-1 bg-white shadow-2xl sm:rounded-2xl"
+                    class="border-1 bg-surface-50 shadow-2xl sm:rounded-2xl"
                 >
                     <div
                         class="mb-4 flex w-full flex-col items-center justify-center gap-6 p-3 sm:p-4"
@@ -176,7 +169,7 @@ onMounted(() => {
                                 </div>
 
                                 <div
-                                    class="border-1 flex w-full items-center justify-center gap-2 divide-x divide-surface-100 rounded-2xl border border-surface-100 text-center sm:w-max"
+                                    class="border-1 flex w-full items-center justify-center gap-2 divide-x divide-surface-100 rounded-2xl border border-surface-100 bg-white text-center sm:w-max"
                                 >
                                     <div class="w-1/3 p-4">
                                         <span
@@ -216,7 +209,6 @@ onMounted(() => {
                                         label="Follow"
                                         class="w-full"
                                         rounded
-                                        outlined
                                     />
                                     <CustomButton
                                         label="Endorse"
@@ -456,7 +448,7 @@ onMounted(() => {
                         </div>
                     </div>
                     <div
-                        class="flex gap-2 bg-white p-3 text-sm text-surface-400 sm:rounded-b-2xl sm:p-4"
+                        class="flex gap-2 bg-surface-50 p-3 text-sm text-surface-400 sm:rounded-b-2xl sm:p-4"
                     >
                         <div class="flex flex-col gap-3">
                             <Logo width="125px" black />

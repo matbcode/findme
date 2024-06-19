@@ -14,7 +14,7 @@ import Footer from '@/Components/Footers/Footer.vue'
     <DynamicDialog />
     <CustomToast />
     <CustomContextMenu />
-    <div class="min-h-screen w-screen">
+    <div class="flex min-h-screen w-screen justify-center">
         <slot />
     </div>
     <Footer />

@@ -28,12 +28,12 @@ export default {
 
             // Color
             {
-                'bg-transparent dark:bg-surface-900': !context.active,
+                'bg-white dark:bg-surface-900': !context.active,
                 'text-surface-700 dark:text-white/80':
                     !context.active,
                 // 'border-surface-200 dark:border-surface-700':
                 // !context.active && !props.invalid,
-                'bg-surface-50 border-primary text-primary-inverse shadow-inner':
+                'bg-surface-100 border-primary text-primary-inverse shadow-inner':
                     context.active,
             },
             // Invalid State

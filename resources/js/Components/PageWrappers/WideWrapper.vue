@@ -1,5 +1,5 @@
 <template>
-    <div class="flex max-w-screen-xl flex-col gap-4">
+    <div class="flex w-full max-w-screen-xl flex-col gap-4">
         <slot />
     </div>
 </template>
