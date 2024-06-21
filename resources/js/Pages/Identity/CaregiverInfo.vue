@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <span class="font-semibold"> Caregiver: </span>
+    <!-- <span class="font-semibold"> Caregiver: </span> -->
 
     <div
         v-if="
@@ -19,8 +19,9 @@ const props = defineProps({
             identity.caregiver_email ||
             identity.caregiver_telephone
         "
-        class="flex w-full flex-col gap-8 rounded-xl"
+        class="flex w-full flex-col gap-8 rounded-2xl p-2"
     >
+        <div class="font-semibold">Caregiver:</div>
         <div
             v-if="
                 identity.caregiver_first_name ||
@@ -77,17 +78,17 @@ const props = defineProps({
         ></iframe>
 
         <div class="flex gap-3">
-            <CustomButton
+            <!-- <CustomButton
                 label="Message"
                 icon="fa-solid fa-envelope"
                 class="w-full"
                 rounded
-            />
+            /> -->
             <CustomButton
                 label="Call"
                 icon="fa-solid fa-phone"
                 class="w-full"
-                severity="success"
+                severity="danger"
                 rounded
             />
         </div>
