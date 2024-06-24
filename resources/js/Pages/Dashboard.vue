@@ -36,15 +36,10 @@ const onShowIdentity = (identity) => {
             <Logo />
             <div class="flex gap-2">
                 <CustomButton
-                    icon="fa-solid fa-user-plus"
-                    severity="success"
+                    label="Add item"
+                    icon="fa-solid fa-circle-plus"
                     @click="onCreateIdentity"
                 />
-                <!-- <CustomButton
-                        label="Add item"
-                        icon="fa-solid fa-circle-plus"
-                        @click="onCreateIdentity"
-                    /> -->
             </div>
         </div>
         <div class="flex h-full flex-col gap-8">

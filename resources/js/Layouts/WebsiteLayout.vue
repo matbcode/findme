@@ -4,6 +4,7 @@ import { Link } from '@inertiajs/vue3'
 import Skeleton from 'primevue/skeleton'
 import CustomButton from '@/Components/Custom/CustomButton.vue'
 import NavItem from '@/Components/Website/NavItem.vue'
+import Logo from '@/Components/Navbar/Logo.vue'
 
 // Reactive variable to track the scroll position
 const scrollPosition = ref(0)
@@ -49,18 +50,8 @@ const logoClasses = computed(() => ({
             class="container mx-auto flex h-full max-w-6xl items-center justify-between"
         >
             <div class="flex items-center gap-9">
-                <Link
-                    :href="route('static.welcome')"
-                    class="flex flex-row items-center gap-2"
-                >
-                    <span
-                        :class="[
-                            '-translate-y-[2px] text-2xl font-bold tracking-tighter transition-all duration-500 ease-in-out',
-                            logoClasses,
-                        ]"
-                        >imlost</span
-                    >
-                </Link>
+                <!-- <Logo /> -->
+                Letterthinkers
             </div>
             <div>
                 <Link

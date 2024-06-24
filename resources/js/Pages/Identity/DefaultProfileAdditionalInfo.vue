@@ -41,8 +41,8 @@ const tabViews = ref([
         <template #Challenges>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <BlockInfo
-                    title="🧠 Memory & Information Processing"
-                    description="Issues with short-term memory, information processing, and recalling details."
+                    title="🌈 Autism Spectrum Disorder (ASD)"
+                    description="Challenges with social skills, repetitive behaviors, and communication."
                 />
                 <BlockInfo
                     title="🎯 Focus & Attention"

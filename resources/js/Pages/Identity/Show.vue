@@ -7,6 +7,7 @@ import DefaultProfileAdditionalInfo from './DefaultProfileAdditionalInfo.vue'
 import ProfileConditions from './ProfileConditions.vue'
 import PublicFooter from './PublicFooter.vue'
 import ProfileInfo from './ProfileInfo.vue'
+import Divider from 'primevue/divider'
 
 import CustomButton from '@/Components/Custom/CustomButton.vue'
 
@@ -29,31 +30,17 @@ const props = defineProps({
         src="https://images.unsplash.com/photo-1614330315526-166f2d71e544?q=80&w=2188&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         class="background fixed w-screen bg-cover"
     /> -->
+    <!-- <iframe
+        src="https://my.spline.design/untitled-15c042768578dad5afac7ab0dfb01c20/"
+        frameborder="0"
+        width="100%"
+        height="100%"
+        class="background absolute h-screen w-screen bg-cover"
+    ></iframe> -->
     <div
-        class="flex flex-col items-center justify-center gap-8 bg-surface-50"
+        class="flex min-h-screen flex-col items-center justify-center gap-8 bg-black"
     >
-        <WideWrapper>
-            <div class="relative mt-[30vh] sm:p-4">
-                <div
-                    class="border-1 bg-white shadow-2xl sm:rounded-2xl"
-                >
-                    <div
-                        class="mb-4 flex w-full flex-col items-center justify-center gap-6 p-3 sm:p-4"
-                    >
-                        <div
-                            class="flex w-full flex-col gap-8 pt-[110px]"
-                        >
-                            <ProfileInfo :identity />
-
-                            <DefaultProfileAdditionalInfo />
-                        </div>
-                    </div>
-                    <PublicFooter />
-                </div>
-            </div>
-        </WideWrapper>
-
-        <!-- <WideWrapper>
+        <WideWrapper v-if="identity.nickname === 'missing'">
             <div class="relative sm:p-4">
                 <div
                     class="border-1 bg-white shadow-2xl sm:rounded-2xl"
@@ -85,9 +72,9 @@ const props = defineProps({
                     <PublicFooter />
                 </div>
             </div>
-        </WideWrapper> -->
+        </WideWrapper>
 
-        <!-- <WideWrapper>
+        <WideWrapper v-else-if="identity.nickname === 'item'">
             <div class="relative sm:p-4">
                 <div
                     class="border-1 flex min-h-screen flex-col justify-between bg-white shadow-2xl sm:rounded-2xl"
@@ -194,6 +181,27 @@ const props = defineProps({
                     </div>
                 </div>
             </div>
-        </WideWrapper> -->
+        </WideWrapper>
+
+        <WideWrapper v-else>
+            <div class="relative mt-[30vh] sm:mt-[10vh] sm:p-4">
+                <div
+                    class="border-1 bg-white shadow-2xl sm:rounded-2xl"
+                >
+                    <div
+                        class="mb-4 flex w-full flex-col items-center justify-center gap-6 p-3 sm:p-4"
+                    >
+                        <div
+                            class="flex w-full flex-col gap-8 pt-[110px]"
+                        >
+                            <ProfileInfo :identity />
+
+                            <DefaultProfileAdditionalInfo />
+                        </div>
+                    </div>
+                    <PublicFooter />
+                </div>
+            </div>
+        </WideWrapper>
     </div>
 </template>
