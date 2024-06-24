@@ -184,16 +184,18 @@ const onMarkAsMissing = () => {
         <div
             class="flex w-full flex-col items-center justify-center gap-8"
         >
-            <!-- <QRCodeVue3
-                :width="300"
-                :height="300"
-                :typeNumber="40"
-                :dotsOptions="{
-                    colorDark: '#FF681F',
-                    colorLight: '#FF681F',
-                }"
-                :value="`https://locately.uk/id/${identity.id}`"
-            /> -->
+            <div class="flex justify-center">
+                <QRCodeVue3
+                    :width="300"
+                    :height="300"
+                    :typeNumber="40"
+                    :dotsOptions="{
+                        colorDark: '#FF681F',
+                        colorLight: '#FF681F',
+                    }"
+                    :value="`https://locately.uk/id/${identity.id}`"
+                />
+            </div>
 
             <!-- <GMapMap
                         :center="center"
