@@ -10,9 +10,21 @@ const currentTab = ref({
     icon: 'fa-solid fa-thumbs-up',
 })
 const tabViews = ref([
-    { label: 'Medications', icon: 'fa-solid fa-thumbs-down' },
-    { label: 'Conditions', icon: 'fa-solid fa-thumbs-up' },
-    { label: 'Allergies', icon: 'fa-solid fa-allergies' },
+    {
+        id: 'Medications',
+        label: 'Medications',
+        icon: 'fa-solid fa-thumbs-down',
+    },
+    {
+        id: 'Conditions',
+        label: 'Conditions',
+        icon: 'fa-solid fa-thumbs-up',
+    },
+    {
+        id: 'Allergies',
+        label: 'Allergies',
+        icon: 'fa-solid fa-allergies',
+    },
 ])
 </script>
 

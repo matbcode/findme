@@ -30,8 +30,8 @@ const activeTab = ref(props.initialTab || props.tabs[0])
         </SelectButton>
 
         <template v-for="tab in tabs" :key="tab">
-            <div v-if="tab.label === activeTab.label">
-                <slot :name="tab.label" />
+            <div v-if="tab.id === activeTab.id">
+                <slot :name="tab.id" />
             </div>
         </template>
     </div>

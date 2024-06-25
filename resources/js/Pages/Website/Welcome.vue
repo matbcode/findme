@@ -64,9 +64,9 @@ useMountEventListener(window, 'scroll', onScroll)
             <div
                 class="flex w-1/3 justify-between gap-4 text-lg font-semibold"
             >
-                <Link>About</Link>
+                <!-- <Link>About</Link>
                 <Link>Why Join Us?</Link>
-                <Link>How It Works</Link>
+                <Link>How It Works</Link> -->
             </div>
             <div>
                 <Link
@@ -141,114 +141,12 @@ useMountEventListener(window, 'scroll', onScroll)
                         <h1
                             class="text-6xl font-black text-orange-500"
                         >
-                            A Space for Unique Minds
+                            Website is under construction
                         </h1>
-                        <p class="mt-4 text-2xl">
+                        <!-- <p class="mt-4 text-2xl">
                             Join our vibrant community where
                             everyone’s perspective is celebrated.
-                        </p>
-                        <div
-                            class="w-max rounded-full bg-orange-500 px-12 py-6 text-2xl font-bold text-white"
-                        >
-                            Get started
-                        </div>
-                    </div>
-                    <div></div>
-                </section>
-            </div>
-            <div
-                class="relative w-screen max-w-screen-2xl bg-surface-100"
-            >
-                <section class="flex w-full py-40">
-                    <div
-                        class="flex h-full w-1/2 flex-col justify-center gap-12"
-                    >
-                        <h1
-                            class="text-6xl font-black text-orange-500"
-                        >
-                            About Us
-                        </h1>
-                        <p class="mt-4 text-2xl">
-                            Our platform is designed for individuals
-                            who think differently. Whether you’re
-                            looking for a place to share your
-                            interests, connect with like-minded
-                            people, or find a supportive community, we
-                            welcome you. Here, every conversation is a
-                            chance to learn, grow, and enjoy the
-                            company of others who understand you
-                        </p>
-                    </div>
-                    <div></div>
-                </section>
-            </div>
-            <div class="relative w-screen max-w-screen-2xl">
-                <section class="flex h-screen w-full">
-                    <div
-                        class="flex h-full w-full flex-col justify-center gap-12"
-                    >
-                        <h1
-                            class="text-6xl font-black text-orange-500"
-                        >
-                            Why Join Us?
-                        </h1>
-                        <div class="grid grid-cols-2 gap-2">
-                            <div
-                                class="rounded-2xl bg-surface-50 p-4"
-                            >
-                                <span
-                                    class="text-4xl font-bold text-orange-500"
-                                >
-                                    Tailored Community
-                                </span>
-                                <div>
-                                    Find and join groups that match
-                                    your interests and passions.
-                                </div>
-                            </div>
-                            <div
-                                class="rounded-2xl bg-surface-50 p-4"
-                            >
-                                <span
-                                    class="text-4xl font-bold text-orange-500"
-                                >
-                                    Safe and Supportive Environment
-                                </span>
-                                <div>
-                                    Connect with others in a space
-                                    designed to respect your privacy
-                                    and support your needs.
-                                </div>
-                            </div>
-                            <div
-                                class="rounded-2xl bg-surface-50 p-4"
-                            >
-                                <span
-                                    class="text-4xl font-bold text-orange-500"
-                                >
-                                    Express Yourself
-                                </span>
-                                <div>
-                                    Share your thoughts, ideas, and
-                                    creations in a welcoming
-                                    environment.
-                                </div>
-                            </div>
-                            <div
-                                class="rounded-2xl bg-surface-50 p-4"
-                            >
-                                <span
-                                    class="text-4xl font-bold text-orange-500"
-                                >
-                                    Events and Activities
-                                </span>
-                                <div>
-                                    Participate in events,
-                                    discussions, and activities that
-                                    cater to diverse interests.
-                                </div>
-                            </div>
-                        </div>
+                        </p> -->
                     </div>
                     <div></div>
                 </section>

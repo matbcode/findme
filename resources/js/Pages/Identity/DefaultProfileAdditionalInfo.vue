@@ -10,9 +10,21 @@ const currentTab = ref({
     icon: 'fa-solid fa-thumbs-up',
 })
 const tabViews = ref([
-    { label: 'Strengths', icon: 'fa-solid fa-thumbs-up' },
-    { label: 'Challenges', icon: 'fa-solid fa-thumbs-down' },
-    { label: 'Allergies', icon: 'fa-solid fa-allergies' },
+    {
+        id: 'Strengths',
+        label: 'Strengths',
+        icon: 'fa-solid fa-thumbs-up',
+    },
+    {
+        id: 'Adjustments',
+        label: 'Reasonable Adjustments',
+        icon: 'fa-solid fa-thumbs-down',
+    },
+    {
+        id: 'Other',
+        label: 'Other Information',
+        icon: 'fa-solid fa-allergies',
+    },
 ])
 </script>
 
@@ -38,7 +50,7 @@ const tabViews = ref([
                 />
             </div>
         </template>
-        <template #Challenges>
+        <template #Adjustments>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <BlockInfo
                     title="🌈 Autism Spectrum Disorder (ASD)"
@@ -58,13 +70,8 @@ const tabViews = ref([
                 />
             </div>
         </template>
-        <template #Allergies>
+        <template #Other>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <BlockInfo
-                    title="🍎 Food Allergies"
-                    description="Allergic reactions to specific foods or food ingredients."
-                    example="Peanuts, shellfish, milk, eggs."
-                />
                 <BlockInfo
                     title="💊 Medication Allergies"
                     description="Adverse reactions to specific medications or drug classes."
